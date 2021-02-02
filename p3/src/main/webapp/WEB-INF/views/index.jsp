@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Insert title here</title>
+<title>행복한 한상 차림 - Meal kit</title>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css' />" rel="stylesheet">
@@ -55,11 +55,10 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
+        <h1 class="my-4">Meal Kit</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          <a href="#" class="list-group-item">한식</a>
+          <a href="#" class="list-group-item">양식</a>
         </div>
 
       </div>
