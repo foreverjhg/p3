@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>행복한 한상 차림 - Meal kit</title>
+<title>행복한 한상 차림 - Homeal</title>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css' />" rel="stylesheet">
@@ -23,7 +23,7 @@
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Meal kit</a>
+      <a class="navbar-brand" href="#">Homeal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,7 +55,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Meal Kit</h1>
+        <h1 class="my-4">Homeal</h1>
         <div class="list-group">
           <a href="#" class="list-group-item">한식</a>
           <a href="#" class="list-group-item">양식</a>
