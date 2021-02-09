@@ -351,7 +351,7 @@ $(document).mouseup(function (e){
 		  all.removeClass("modal");
 		  location.href="#";
 	  }
-	});
+	}); 
 		 
 
 
