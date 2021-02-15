@@ -9,5 +9,6 @@
     </settings>
     <typeAliases>
           <typeAlias alias="projectVO" type="com.p3.vo.ProjectVO"/>
+          <typeAlias alias="memberVO" type="com.p3.vo.MemberVO"/>
     </typeAliases>
 </configuration>

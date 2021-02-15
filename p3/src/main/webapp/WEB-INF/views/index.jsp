@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,15 +41,29 @@
             <a class="nav-link" href="#">Services</a>
           </li>
           <li class="nav-login">
-            <a class="nav-link" href="#open">LOGIN</a>
-            
-             </li>
+         
+          <%String name = (String)session.getAttribute("name"); %>
+          
+          <%if(name != null){%>
+           <a class="nav-link" href="<c:url value='/userLogOut.do'/>">LOGOUT</a>
+           <%}else{ %>
+          <a class="nav-link" href="#open">LOGIN</a>
+          <%} %>
+         
+          </li>
+          
+          <%if(name != null){ %>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><%=name %></a>
+          </li>
+          <%} %>
         </ul>
       </div>
     </div>
   </nav>
             
-           
+<%--           <input type="text" value="${name}" style="color: black;"/> --%>
+   
     <div id = "open" class="modal">
     <div class="all"> 
     <div class="form">  
@@ -61,26 +74,25 @@
       
       <div class="tab-content">
       <div id="login">   
-          <h1 class = "loginh1">Welcome Back!</h1>
+          <h1 class = "loginh2">Welcome Back!</h1>
           
-          <form action="/" method="post">
+          <form action="<c:url value='/userLog.do'/>" method="post">
           
             <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              ID<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="text"required autocomplete="off" name="id"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password"required autocomplete="off" name = "pw"/>
           </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
+        	
+        	
           <button class="button button-block">Log In</button>
           
           </form>
@@ -89,37 +101,47 @@
         <div id="signup">   
           <h1 class = "loginh1">Sign Up for Free</h1>
           
-          <form action="/" method="post">
+          <form action="<c:url value='/userReg.do'/>" method="post">
           
           <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
+                   
+            
           </div>
 
           <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              ID<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="text"required autocomplete="off" name="id"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password"required autocomplete="off" name="pw"/>
           </div>
+          
+          <div class="field-wrap">
+              <label>
+                Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="name"/>
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Address<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="address"/>
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Phone<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="phone"/>
+            </div>
           
           <button type="submit" class="button button-block">Get Started</button>
           
@@ -352,15 +374,7 @@ $(document).mouseup(function (e){
 		  location.href="#";
 	  }
 	}); 
-		 
-
-
-		 
-
-
-
-
-  </script>
+		 </script>
 
 </body>
 </html>
