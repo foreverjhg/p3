@@ -10,5 +10,8 @@
     <typeAliases>
           <typeAlias alias="projectVO" type="com.p3.vo.ProjectVO"/>
           <typeAlias alias="memberVO" type="com.p3.vo.MemberVO"/>
+          <typeAlias alias="productVO" type="com.p3.vo.ProductVO"/>
+          <typeAlias alias="reviewVO" type="com.p3.vo.ReviewVO"/>
+         
     </typeAliases>
 </configuration>

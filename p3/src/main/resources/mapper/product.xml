@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 맵핑될 DAO 인터페이스의 Full name 을 줍니다. -->
+<mapper namespace="com.p3.dao.ProductDAO">
+
+<!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 VO 는 mybatis-confg.xml 에 Alias 되어 있습니다. -->
+ <select id="getTotCnt" resultType="Integer">
+   SELECT COUNT(*) FROM MEAL_KIT
+ </select>
+
+ <insert id="setProductReg" parameterType="productVO">
+ 	INSERT INTO MEAL_KIT (DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE) VALUES(#{dishnum}, #{dishname}, #{foodkind}, #{price}, #{recipe}, #{cnt}, #{imgby})
+ </insert>
+
+ <select id="getProdInfo" resultType="productVO">
+   SELECT dishnum, dishname, foodkind, price, recipe, cnt FROM MEAL_KIT WHERE DISHNUM = #{dishnum}
+ </select>
+ 
+ <select id="getImageShow" resultType="productVO">
+   SELECT IMAGE AS IMGBY FROM MEAL_KIT WHERE DISHNUM = #{dishnum}
+ </select>
+
+  <insert id="setReview" parameterType="reviewVO">
+   		<selectKey keyProperty="num" resultType="int" order="BEFORE">
+			 SELECT COUNT(*) + 1 as num FROM REVIEW
+		</selectKey>
+  	INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate)
+  </insert>
+  
+  <select id="getReview" resultType="reviewVO">
+   SELECT num, id, dishnum, message, starpoint, writedate FROM REVIEW WHERE dishnum = #{dishnum} ORDER BY NUM DESC
+ </select>
+ 
+ 
+</mapper>
