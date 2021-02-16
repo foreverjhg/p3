@@ -81,11 +81,12 @@ public class ProductController {
 		logger.info("detail : " + result.toString());
 		model.addAttribute("result", result);
 
-		
-		logger.info("review : " + list.toString());
-		model.addAttribute("review", list);
-		model.addAttribute("size", list.size());
-		
+		if(list.size() !=0 || list != null) {
+			logger.info("review : " + list.toString());
+			model.addAttribute("size", list.size());
+			model.addAttribute("review", list);
+		}
+
 		return "detail";
 	}
 
