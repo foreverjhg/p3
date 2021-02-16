@@ -26,20 +26,32 @@
 	        <td>
 	           <input type="number" name="price" placeholder="음식가격을 입력하세요.">
 	        </td>
-	      </tr>
-	      <tr>
 	        <td>
 	         	<input type="text" name="recipe" placeholder="음식재료을 입력하세요.">
 	        </td>
 	        <td>
 	         	<input type="number" name="cnt" placeholder="음식갯수을 입력하세요.">
 	        </td>
+	      </tr>
+	      <tr>
 	        <td>
-	          <input type="file" name="image" value="파일선택">
+	          큰이미지 : <input type="file" name="image1" value="파일선택">
+	        </td>
+	        <td>
+	          작은이미지1 : <input type="file" name="image2" value="파일선택">
+	        </td>
+	        <td>
+	          작은이미지2 : <input type="file" name="image3" value="파일선택">
+	        </td>
+	        <td>
+	          작은이미지3 : <input type="file" name="image4" value="파일선택">
+	        </td>
+	        <td>
+	          작은이미지4 : <input type="file" name="image5" value="파일선택">
 	        </td>
 	      </tr>
 	      <tr>
-	        <td colspan="3" align="center">
+	        <td colspan="5" align="center">
 	           <input type="submit" value="보내기">
 	        </td>
 	      </tr>
