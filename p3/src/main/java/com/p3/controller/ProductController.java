@@ -57,7 +57,12 @@ public class ProductController {
 		String time1 = format1.format(time);
 
 		vo.setDishnum(time1 + "_Product_" + vo.getDishnum());
-		vo.setImgby(vo.getImage().getBytes());
+		vo.setImgby1(vo.getImage1().getBytes());
+		vo.setImgby2(vo.getImage2().getBytes());
+		vo.setImgby3(vo.getImage3().getBytes());
+		vo.setImgby4(vo.getImage4().getBytes());
+		vo.setImgby5(vo.getImage5().getBytes());
+		
 
 		logger.info(vo.toString());
 
@@ -72,7 +77,7 @@ public class ProductController {
 
 		// 상위 페이지에서 준것처럼
 		ProductVO vo = new ProductVO();
-		vo.setDishnum("2021_Product_00002");
+		vo.setDishnum("2021_Product_00000");
 
 		ProductVO result = productService.getProdInfo(vo);
 
@@ -92,7 +97,7 @@ public class ProductController {
 		return "detail";
 	}
 
-	// 상품 이미지 생성
+	// 상품 이미지 생성 1
 	@RequestMapping(value = "/imgShow.do", produces = "text/plain;charset=EUC-KR", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> imageShow(Model model, HttpServletRequest req) throws Exception {
 
@@ -100,7 +105,67 @@ public class ProductController {
 		vo.setDishnum(req.getParameter("dishnum"));
 		ProductVO result = productService.getImageShow(vo);
 
-		byte[] imageContent = (byte[]) result.getImgby();
+		byte[] imageContent = (byte[]) result.getImgby1();
+		final HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.IMAGE_PNG);
+
+		return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
+	}
+
+	// 상품 이미지 생성 2
+	@RequestMapping(value = "/imgShow2.do", produces = "text/plain;charset=EUC-KR", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> imageShow2(Model model, HttpServletRequest req) throws Exception {
+
+		ProductVO vo = new ProductVO();
+		vo.setDishnum(req.getParameter("dishnum"));
+		ProductVO result = productService.getImageShow(vo);
+
+		byte[] imageContent = (byte[]) result.getImgby2();
+		final HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.IMAGE_PNG);
+
+		return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
+	}
+
+	// 상품 이미지 생성 3
+	@RequestMapping(value = "/imgShow3.do", produces = "text/plain;charset=EUC-KR", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> imageShow3(Model model, HttpServletRequest req) throws Exception {
+
+		ProductVO vo = new ProductVO();
+		vo.setDishnum(req.getParameter("dishnum"));
+		ProductVO result = productService.getImageShow(vo);
+
+		byte[] imageContent = (byte[]) result.getImgby3();
+		final HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.IMAGE_PNG);
+
+		return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
+	}
+
+	// 상품 이미지 생성 4
+	@RequestMapping(value = "/imgShow4.do", produces = "text/plain;charset=EUC-KR", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> imageShow4(Model model, HttpServletRequest req) throws Exception {
+
+		ProductVO vo = new ProductVO();
+		vo.setDishnum(req.getParameter("dishnum"));
+		ProductVO result = productService.getImageShow(vo);
+
+		byte[] imageContent = (byte[]) result.getImgby4();
+		final HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.IMAGE_PNG);
+
+		return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
+	}
+
+	// 상품 이미지 생성 5
+	@RequestMapping(value = "/imgShow5.do", produces = "text/plain;charset=EUC-KR", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> imageShow5(Model model, HttpServletRequest req) throws Exception {
+
+		ProductVO vo = new ProductVO();
+		vo.setDishnum(req.getParameter("dishnum"));
+		ProductVO result = productService.getImageShow(vo);
+
+		byte[] imageContent = (byte[]) result.getImgby5();
 		final HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.IMAGE_PNG);
 
