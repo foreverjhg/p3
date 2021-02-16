@@ -20,8 +20,8 @@
 	INSERT INTO MEMBER (ID, PW, NAME, ADDRESS, PHONE) VALUES(#{id}, #{pw}, #{name}, #{address}, #{phone})
  </insert>
  
- <select id="getUserLog" resultType="String">
- 	SELECT NAME FROM MEMBER where id = #{id} and pw = #{pw}
+ <select id="getUserLog" resultType="memberVO">
+ 	SELECT * FROM MEMBER where id = #{id} and pw = #{pw}
  </select>
 
 </mapper>

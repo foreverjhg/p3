@@ -8,7 +8,7 @@ public interface MemberDAO {
 
 	int getUserReg(MemberVO user) throws Exception;
 
-	String getUserLog(MemberVO login) throws Exception;
+	MemberVO getUserLog(MemberVO login) throws Exception;
 
 	
 

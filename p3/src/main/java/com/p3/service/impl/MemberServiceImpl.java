@@ -24,7 +24,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	
 	@Transactional
-	public String getUserLog(MemberVO login) throws Exception {
+	public MemberVO getUserLog(MemberVO login) throws Exception {
 		return dao.getUserLog(login);
 	}
 

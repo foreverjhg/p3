@@ -48,14 +48,14 @@ public class MemberController {
 
 		String url = "";
 
-		String name = memberService.getUserLog(login);
+		MemberVO member = memberService.getUserLog(login);
 
-		logger.info("로그인 완료 :" + name);
+		logger.info("로그인 완료 :" + member);
 
 		HttpSession session = req.getSession();
-		session.setAttribute("name", name);
+		session.setAttribute("member", member);
 
-		if (name != null) {
+		if (member != null) {
 			url = "member/success";
 		} else {
 			url = "member/failed";
@@ -70,7 +70,7 @@ public class MemberController {
 		String url = "";
 
 		HttpSession session = req.getSession();
-		session.removeAttribute("name");
+		session.removeAttribute("member");
 
 		url = "member/success";
 

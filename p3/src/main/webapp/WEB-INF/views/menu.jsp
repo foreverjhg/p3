@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,8 +68,8 @@ body {
 	border-right: 1px solid rgba(0, 0, 0, .5);
 }
 
-a {
-	color: #212529 !important;
+a.nav-link {
+   color: #212529 !important;
 }
 
 .card {
@@ -83,7 +83,7 @@ a {
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a class="navbar-brand mb-0 h1 " href="#">HOMEAL</a>
+			<a class="navbar-brand mb-0 h1 " href="/sample.do">HOMEAL</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -91,8 +91,21 @@ a {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
+					<c:if test="${member != null}">
+         		 <li class="nav-item">
+           		<a class="nav-link" href="#">${member.name}님</a>
+          		</li>
+          	 </c:if>
+            	
+               <li class="nav-item">
+               <c:if test="${member != null}">
+               <a class = "nav-link" href="<c:url value='/userLogOut.do'/>">로그아웃</a>
+               </c:if>
+               
+               <c:if test="${member == null}">
+               <a class="nav-link" href="#open">로그인</a>
+               </c:if>
+               </li>
 				</ul>
 			</div>
 		</div>
@@ -103,11 +116,11 @@ a {
 			<div class="container">
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto mr-auto h5">
-						<li class="nav-item"><a class="nav-link" href="#">호밀</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">메뉴</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">사진</a></li>
+						 <li class="nav-item"><a class="nav-link" href="<c:url value='/about.do'/>">호밀</a></li>
+                  		 <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
+                  		 <li class="nav-item"><a class="nav-link" href="<c:url value='/menu.do'/>">메뉴</a></li>
+                  		 <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
+                  		 <li class="nav-item"><a class="nav-link" href="<c:url value='/photo.do'/>">사진</a></li>
 					</ul>
 				</div>
 			</div>
@@ -132,136 +145,136 @@ a {
 		<div class="row">
 
 			<div class="col-lg-4 col-md-6 mb-4">
-				<div class="card h-100">
-					<a href="#"><img class="card-img-top p-3"
-						src="http://placehold.it/700x700" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Item One</a>
-						</h4>
-						<div class="row">
-							<div class="col-6">
-								<h5>$24.99</h5>
-							</div>
-							<div class="col-6 d-flex justify-content-end">
-								<a href="#"><img class="rounded-circle"
-									src="http://placehold.it/30x30" alt=""></a>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-6 mb-4">
-				<div class="card h-100">
-					<a href="#"><img class="card-img-top p-3"
-						src="http://placehold.it/700x700" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Item One</a>
-						</h4>
-						<div class="row">
-							<div class="col-6">
-								<h5>$24.99</h5>
-							</div>
-							<div class="col-6 d-flex justify-content-end">
-								<a href="#"><img class="rounded-circle"
-									src="http://placehold.it/30x30" alt=""></a>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
+               <div class="card h-100">
+                  <a href="#"><img class="card-img-top p-3"
+                     src="http://placehold.it/700x700" alt=""></a>
+                  <div class="card-body">
+                     <h4 class="card-title">
+                        <a href="#">Item One</a>
+                     </h4>
+                     <div class="row">
+                     	<div class="col-10">
+                     		<h5>$24.99</h5>
+                     	</div>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
+                     	</div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
 
 			<div class="col-lg-4 col-md-6 mb-4">
-				<div class="card h-100">
-					<a href="#"><img class="card-img-top p-3"
-						src="http://placehold.it/700x700" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Item One</a>
-						</h4>
-						<div class="row">
-							<div class="col-6">
-								<h5>$24.99</h5>
-							</div>
-							<div class="col-6 d-flex justify-content-end">
-								<a href="#"><img class="rounded-circle"
-									src="http://placehold.it/30x30" alt=""></a>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-6 mb-4">
-				<div class="card h-100">
-					<a href="#"><img class="card-img-top p-3"
-						src="http://placehold.it/700x700" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Item One</a>
-						</h4>
-						<div class="row">
-							<div class="col-6">
-								<h5>$24.99</h5>
-							</div>
-							<div class="col-6 d-flex justify-content-end">
-								<a href="#"><img class="rounded-circle"
-									src="http://placehold.it/30x30" alt=""></a>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
+               <div class="card h-100">
+                  <a href="#"><img class="card-img-top p-3"
+                     src="http://placehold.it/700x700" alt=""></a>
+                  <div class="card-body">
+                     <h4 class="card-title">
+                        <a href="#">Item One</a>
+                     </h4>
+                     <div class="row">
+                     	<div class="col-10">
+                     		<h5>$24.99</h5>
+                     	</div>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
+                     	</div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
 
 			<div class="col-lg-4 col-md-6 mb-4">
-				<div class="card h-100">
-					<a href="#"><img class="card-img-top p-3"
-						src="http://placehold.it/700x700" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Item One</a>
-						</h4>
-						<div class="row">
-							<div class="col-6">
-								<h5>$24.99</h5>
-							</div>
-							<div class="col-6 d-flex justify-content-end">
-								<a href="#"><img class="rounded-circle"
-									src="http://placehold.it/30x30" alt=""></a>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
+               <div class="card h-100">
+                  <a href="#"><img class="card-img-top p-3"
+                     src="http://placehold.it/700x700" alt=""></a>
+                  <div class="card-body">
+                     <h4 class="card-title">
+                        <a href="#">Item One</a>
+                     </h4>
+                     <div class="row">
+                     	<div class="col-10">
+                     		<h5>$24.99</h5>
+                     	</div>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
+                     	</div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
 
 			<div class="col-lg-4 col-md-6 mb-4">
-				<div class="card h-100">
-					<a href="#"><img class="card-img-top p-3"
-						src="http://placehold.it/700x700" alt=""></a>
-					<div class="card-body">
-						<h4 class="card-title">
-							<a href="#">Item One</a>
-						</h4>
-						<div class="row">
-							<div class="col-6">
-								<h5>$24.99</h5>
-							</div>
-							<div class="col-6 d-flex justify-content-end">
-								<a href="#"><img class="rounded-circle"
-									src="http://placehold.it/30x30" alt=""></a>
-							</div>
-						</div>
+               <div class="card h-100">
+                  <a href="#"><img class="card-img-top p-3"
+                     src="http://placehold.it/700x700" alt=""></a>
+                  <div class="card-body">
+                     <h4 class="card-title">
+                        <a href="#">Item One</a>
+                     </h4>
+                     <div class="row">
+                     	<div class="col-10">
+                     		<h5>$24.99</h5>
+                     	</div>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
+                     	</div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
 
-					</div>
-				</div>
-			</div>
+			<div class="col-lg-4 col-md-6 mb-4">
+               <div class="card h-100">
+                  <a href="#"><img class="card-img-top p-3"
+                     src="http://placehold.it/700x700" alt=""></a>
+                  <div class="card-body">
+                     <h4 class="card-title">
+                        <a href="#">Item One</a>
+                     </h4>
+                     <div class="row">
+                     	<div class="col-10">
+                     		<h5>$24.99</h5>
+                     	</div>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
+                     	</div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+
+			<div class="col-lg-4 col-md-6 mb-4">
+               <div class="card h-100">
+                  <a href="#"><img class="card-img-top p-3"
+                     src="http://placehold.it/700x700" alt=""></a>
+                  <div class="card-body">
+                     <h4 class="card-title">
+                        <a href="#">Item One</a>
+                     </h4>
+                     <div class="row">
+                     	<div class="col-10">
+                     		<h5>$24.99</h5>
+                     	</div>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
+                     	</div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
 
 		</div>
 		<!-- /.row -->

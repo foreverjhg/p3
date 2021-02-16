@@ -11,7 +11,7 @@
 	
    <script type="text/javascript">
 	  function init() {
-		  location.href = "/index.do";
+		  location.href = "/sample.do";
 	  }
 	</script>
 </body>

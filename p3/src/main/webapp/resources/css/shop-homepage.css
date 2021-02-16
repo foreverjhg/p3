@@ -102,7 +102,7 @@ a:hover {
   display:float;
   clear: both;
 }
-.tab-group li > a {
+.tab-group li > a.join {
   display: block;
   text-decoration: none;
   padding: 15px;
@@ -117,11 +117,12 @@ a:hover {
 }
  
 
-.tab-group li a:hover {
+
+ .tab-group li a.join:hover {
   background: #179b77;
   color: #ffffff;
-}
-.tab-group .active a {
+} 
+.tab-group .active a.join {
   background: #1ab188;
   color: #ffffff;
 }

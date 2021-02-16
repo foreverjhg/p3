@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +68,7 @@ body {
    border-right: 1px solid rgba(0, 0, 0, .5);
 }
 
-a {
+a.nav-link {
    color: #212529 !important;
 }
 
@@ -91,23 +91,134 @@ a {
          </button>
          <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-               <li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
-               <li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
+            	
+             <c:if test="${member != null}">
+         		 <li class="nav-item">
+           		<a class="nav-link" href="#">${member.name}님</a>
+          		</li>
+          	 </c:if>
+            	
+               <li class="nav-item">
+               <c:if test="${member != null}">
+               <a class = "nav-link" href="<c:url value='/userLogOut.do'/>">로그아웃</a>
+               </c:if>
+               
+               <c:if test="${member == null}">
+               <a class="nav-link" href="#open">로그인</a>
+               </c:if>
+               </li>
+               
+             
+               
+               
             </ul>
          </div>
       </div>
    </nav>
+
+<div id = "open" class="modal">
+    <div class="all"> 
+    <div class="form">  
+      <ul class="tab-group">
+        <li class="tab"><a href="#login" class = "join">Log In</a></li>
+        <li class="tab"><a href="#signup" class = "join">Sign Up</a></li>
+      </ul>
+      
+      <div class="tab-content">
+      <div id="login">   
+          <h1 class = "loginh2">Welcome Back!</h1>
+          
+          <form action="<c:url value='/userLog.do'/>" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              ID<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" name="id"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" name = "pw"/>
+          </div>
+        	
+        	
+          <button class="button button-block">Log In</button>
+          
+          </form>
+
+        </div>
+        <div id="signup">   
+          <h1 class = "loginh1">Sign Up for Free</h1>
+          
+          <form action="<c:url value='/userReg.do'/>" method="post">
+          
+          <div class="top-row">
+                   
+            
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              ID<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" name="id"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" name="pw"/>
+          </div>
+          
+          <div class="field-wrap">
+              <label>
+                Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="name"/>
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Address<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="address"/>
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Phone<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="phone"/>
+            </div>
+          
+          <button type="submit" class="button button-block">Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+</div>
+  </div>
 
    <div class="container-fluid m-0 p-0">
       <nav class="navbar navbar-expand-lg navbar-light">
          <div class="container">
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto mr-auto h5">
-                  <li class="nav-item"><a class="nav-link" href="#">호밀</a></li>
+                 <li class="nav-item"><a class="nav-link" href="<c:url value='/about.do'/>">호밀</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">메뉴</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<c:url value='/menu.do'/>">메뉴</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">사진</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<c:url value='/photo.do'/>">사진</a></li>
                </ul>
             </div>
          </div>
@@ -130,15 +241,15 @@ a {
             </ol>
             <div class="carousel-inner w-auto" role="listbox">
                <div class="carousel-item active">
-                  <img class="d-block img-fluid" src="http://placehold.it/2500x1200"
+                  <img class="d-block img-fluid" src="<c:url value='/resources/img/main/main-1.jpg' />"
                      alt="First slide">
                </div>
                <div class="carousel-item">
-                  <img class="d-block img-fluid" src="http://placehold.it/2500x1200"
+                  <img class="d-block img-fluid" src="<c:url value='/resources/img/main/main-2.jpg' />"
                      alt="Second slide">
                </div>
                <div class="carousel-item">
-                  <img class="d-block img-fluid" src="http://placehold.it/2500x1200"
+                  <img class="d-block img-fluid" src="<c:url value='/resources/img/main/main-3.jpg' />"
                      alt="Third slide">
                </div>
             </div>
@@ -153,7 +264,7 @@ a {
             </a>
          </div>
 
-         <div class="jumbotron text-center bg-white px-0">
+         <div class="jumbotron text-center bg-white px-0 mb-0">
             <h2 class="display-6">HOMEAL'S STORY</h2>
             <div class="row">
                <div class="col-5"></div>
@@ -164,6 +275,13 @@ a {
             </div>
             <p class="lead mb-0">먹고 싶은 음식이 있어도 걱정 NO!</p>
             <p class="lead">이젠 집에서 간편하게 요리하세요!</p>
+         </div>
+         
+         <div class="row">
+         	<div class="col-12">
+         		<img class="d-block img-fluid" src="<c:url value='/resources/img/main/main-m2.jpg' />"
+                     alt="">
+         	</div>
          </div>
 
          <div class="jumbotron text-center bg-white px-0 mb-0">
@@ -189,12 +307,12 @@ a {
                         <a href="#">Item One</a>
                      </h4>
                      <div class="row">
-                     	<div class="col-6">
+                     	<div class="col-10">
                      		<h5>$24.99</h5>
                      	</div>
-                     	<div class="col-6 d-flex justify-content-end">
-                     		<a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
                      	</div>
                      </div>
                      
@@ -211,12 +329,12 @@ a {
                         <a href="#">Item One</a>
                      </h4>
                      <div class="row">
-                     	<div class="col-6">
+                     	<div class="col-10">
                      		<h5>$24.99</h5>
                      	</div>
-                     	<div class="col-6 d-flex justify-content-end">
-                     		<a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
                      	</div>
                      </div>
                      
@@ -233,12 +351,12 @@ a {
                         <a href="#">Item One</a>
                      </h4>
                      <div class="row">
-                     	<div class="col-6">
+                     	<div class="col-10">
                      		<h5>$24.99</h5>
                      	</div>
-                     	<div class="col-6 d-flex justify-content-end">
-                     		<a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a>
+                     	<div class="col-2 pr-2">
+                     		<a href="#"><img class="img-fluid rounded-circle"
+                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
                      	</div>
                      </div>
                      
@@ -269,6 +387,55 @@ a {
    <script src="<c:url value='/resources/vendor/jquery/jquery.min.js' />"></script>
    <script
       src="<c:url value='/resources/vendor/bootstrap/js/bootstrap.bundle.min.js' />"></script>
+	<script>
 
+    $(".form")
+  .find("input, textarea")
+  .on("keyup blur focus", function (e) {
+    var $this = $(this),
+      label = $this.prev("label");
+    if (e.type === "keyup") {
+      if ($this.val() === "") {
+        label.removeClass("active highlight");
+      } else {
+        label.addClass("active highlight");
+      }
+    } else if (e.type === "blur") {
+      if ($this.val() === "") {
+        label.removeClass("active highlight");
+      } else {
+        label.removeClass("highlight");
+      }
+    } else if (e.type === "focus") {
+      if ($this.val() === "") {
+        label.removeClass("highlight");
+      } else if ($this.val() !== "") {
+        label.addClass("highlight");
+      }
+    }
+  });
+
+$(".tab a").on("click", function (e) {
+  e.preventDefault();
+  $(this).parent().addClass("active");
+  $(this).parent().siblings().removeClass("active");
+
+  target = $(this).attr("href");
+
+   $(".tab-content > div").not(target).hide();
+
+  $(target).fadeIn(600); 
+  
+});
+
+
+$(document).mouseup(function (e){
+	  var all = $(".all");
+	  if(all.has(e.target).length === 0){
+		  all.removeClass("modal");
+		  location.href="#";
+	  }
+	}); 
+		 </script>
 </body>
 </html>
