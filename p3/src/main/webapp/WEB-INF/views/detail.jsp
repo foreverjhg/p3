@@ -260,7 +260,7 @@ a {
 	<footer class="py-5 bg-light">
 		<div class="container">
 			<p class="m-0 text-center text-#E5E9EF">Copyright &copy; HOMEAL
-				2021</p>
+				2021</p> 
 		</div>
 		<!-- /.container -->
 	</footer>
