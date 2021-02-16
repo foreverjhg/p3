@@ -78,8 +78,10 @@ public class ProductController {
 
 		List<ReviewVO> list = productService.getReview(vo);
 
-		logger.info("detail : " + result.toString());
-		model.addAttribute("result", result);
+		if(result != null) {
+			logger.info("detail : " + result.toString());
+			model.addAttribute("result", result);
+		}
 
 		if(list.size() !=0 || list != null) {
 			logger.info("review : " + list.toString());
