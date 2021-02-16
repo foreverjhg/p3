@@ -1,3 +1,4 @@
+
 drop table member CASCADE CONSTRAINTS;
 drop table meal_kit CASCADE CONSTRAINTS;
 drop table delivery CASCADE CONSTRAINTS;
@@ -12,22 +13,32 @@ PHONE varchar2(30) not null
 );
 
 create table meal_kit
-(DISH_NAME varchar2(30) constraint pk_dish primary key,
-PRICE varchar2(30) not null,
+(DISHNUM varchar2(500) constraint pk_dish primary key,
+DISHNAME varchar2(30) not null,
+FOODKIND char(1) not null,
+PRICE number not null,
+RECIPE varchar2(3000) not null,
 CNT number not null,
-image varchar2(100) not null);
+IMAGE1 blob not null,
+IMAGE2 blob not null,
+IMAGE3 blob not null,
+IMAGE4 blob not null,
+IMAGE5 blob not null);
 
 create table  delivery
 (ID varchar2(30) ,
-DISH_NAME varchar2(30),
+DISHNUM varchar2(30),
+CNT number not null,
 constraint fk_id foreign key(ID) REFERENCES member(ID),
-constraint fk_dish foreign key(DISH_NAME) REFERENCES meal_kit(DISH_NAME)
+constraint fk_dish foreign key(DISHNUM) REFERENCES meal_kit(DISHNUM)
 );
 
 create table review
-(ID varchar2(30),
-DISH_NAME varchar2(30),
+(NUM number,
+ID varchar2(30),
+DISHNUM varchar2(30),
 MESSAGE varchar2(1000),
-STAR varchar2(30),
+STARPOINT varchar2(30),
+WRITEDATE DATE,
 constraint fk_id2 foreign key(ID) REFERENCES member(ID),
-constraint fk_dish2 foreign key(DISH_NAME) REFERENCES meal_kit(DISH_NAME));
+constraint fk_dish2 foreign key(DISHNUM) REFERENCES meal_kit(DISHNUM));
