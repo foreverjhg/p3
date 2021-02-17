@@ -8,11 +8,20 @@
 			<li class="page-item" style="margin-right: 4px;"><a class="page-link"
 				href="javascript:goPage(${param.prevPageNo})" aria-label="Previous"><span
 					aria-hidden="true">&laquo;</span></a></li>
-			<li class="page-item">
 			     <c:forEach var="i" begin="${param.startPageNo}" end="${param.endPageNo}" step="1">
-					<a class="page-link" href="javascript:goPage(${i})" style="display: inline-block;">${i}</a>
+			       <c:choose>
+			         <c:when test="${i eq param.pageNo}">
+			         <li class="page-item active">
+					   <a class="page-link" href="javascript:goPage(${i})" style="display: inline-block;">${i}<span class="sr-only">(current)</span></a>
+					 </li>
+					 </c:when>
+					 <c:otherwise>
+					   <li class="page-item">
+					 	<a class="page-link" href="javascript:goPage(${i})" style="display: inline-block;">${i}</a>
+					  </li>
+					 </c:otherwise>
+				  </c:choose>
 				</c:forEach>
-			</li>
 			<li class="page-item" style="margin-left: 4px;"><a class="page-link"
 				href="javascript:goPage(${param.nextPageNo})" aria-label="Next"><span
 					aria-hidden="true">&raquo;</span></a></li>
