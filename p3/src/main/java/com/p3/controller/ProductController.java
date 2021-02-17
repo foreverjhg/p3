@@ -18,10 +18,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.p3.service.ProductService;
+import com.p3.vo.PagingVO;
 import com.p3.vo.ProductVO;
-import com.p3.vo.ProjectVO;
 import com.p3.vo.ReviewVO;
 
 @Controller
@@ -73,15 +74,26 @@ public class ProductController {
 
    // 상품 정보 조회
    @RequestMapping(value = "/detail.do")
-   public String detail(Model model) throws Exception {
-
-      // 상위 페이지에서 준것처럼
-      ProductVO vo = new ProductVO();
-      vo.setDishnum("2021_Product_00000");
-
-      ProductVO result = productService.getProdInfo(vo);
-
-      List<ReviewVO> list = productService.getReview(vo);
+   public String detail(Model model, @ModelAttribute("pagingVO") PagingVO pagingVO, @RequestParam(value = "pageNo", required=false) String pageNo) throws Exception {
+      
+      pagingVO.setDishnum("2021_Product_00000");
+      
+      int totcnt = productService.getReviewTotCnt(pagingVO);
+      
+      pagingVO.setPageSize(5); // 한페이지에 보일 게시글 수
+	  pagingVO.setPageNo(1); //현재 페이지 번호
+	   
+	   if(pageNo != null) {
+		   pagingVO.setPageNo(Integer.parseInt(pageNo));
+	   }
+	   pagingVO.setBlockSize(10);
+	   pagingVO.setTotalCount(totcnt); //게시물 총 갯수
+	   
+	  model.addAttribute("paging", pagingVO);
+	   
+      ProductVO result = productService.getProdInfo(pagingVO);
+      
+      List<ReviewVO> list = productService.getReview(pagingVO);
 
       if(result != null) {
          logger.info("detail : " + result.toString());
@@ -90,7 +102,7 @@ public class ProductController {
 
       if(list.size() !=0 || list != null) {
          logger.info("review : " + list.toString());
-         model.addAttribute("size", list.size());
+         model.addAttribute("size", totcnt);
          model.addAttribute("review", list);
       }
 
@@ -182,4 +194,5 @@ public class ProductController {
 
       return "redirect:/detail.do";
    }
+   
 }

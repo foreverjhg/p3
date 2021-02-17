@@ -28,9 +28,15 @@
   	INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate)
   </insert>
   
-  <select id="getReview" resultType="reviewVO">
-   SELECT num, id, dishnum, message, starpoint, writedate FROM REVIEW WHERE dishnum = #{dishnum} ORDER BY NUM DESC
+  <select id="getReview" parameterType="pagingVO" resultType="reviewVO">
+	SELECT * FROM (SELECT ROWNUM rnum, A.* FROM(SELECT * FROM REVIEW WHERE DISHNUM = #{dishnum} ORDER
+	BY NUM DESC) A
+	WHERE ROWNUM <![CDATA[<]]>= #{endRowNum })
+	WHERE rnum <![CDATA[>]]>= #{startRowNum }
  </select>
  
+  <select id="getReviewTotCnt" resultType="Integer">
+  	SELECT COUNT(*) FROM REVIEW
+  </select>
  
 </mapper>

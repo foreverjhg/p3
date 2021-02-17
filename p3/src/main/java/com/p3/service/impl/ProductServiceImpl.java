@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.p3.dao.ProductDAO;
 import com.p3.service.ProductService;
+import com.p3.vo.PagingVO;
 import com.p3.vo.ProductVO;
 import com.p3.vo.ReviewVO;
 
@@ -37,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	@Transactional
-	public ProductVO getProdInfo(ProductVO vo) throws Exception {
+	public ProductVO getProdInfo(PagingVO vo) throws Exception {
 		return dao.getProdInfo(vo);
 	}
 
@@ -47,8 +48,13 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ReviewVO> getReview(ProductVO vo) throws Exception {
+	public List<ReviewVO> getReview(PagingVO vo) throws Exception {
 		return dao.getReview(vo);
+	}
+
+	@Override
+	public int getReviewTotCnt(PagingVO pagingVO) throws Exception {
+		return dao.getReviewTotCnt(pagingVO);
 	}
 
 }

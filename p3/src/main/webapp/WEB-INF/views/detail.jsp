@@ -106,7 +106,12 @@ margin-top: 139px !important;
 }
 
 </style>
-
+<script type="text/javascript">
+ function goPage(pageNo) {
+	document.listForm.pageNo.value = pageNo;
+	document.listForm.submit();
+ }
+</script>
 </head>
 
 <body>
@@ -352,8 +357,7 @@ margin-top: 139px !important;
       <form action="<c:url value='/reviewReg.do'/>" method="post" name="frm">
       <input type="hidden" name="dishnum" value="${result.dishnum }">
       <input type="hidden" name="id" value="${name.id }"> 
-      <table class="table table-hover my-4" id="ReviewTable">
-         <thead>
+      <table class="table table-hover my-4" id="ReviewTableWrite">
              <tr>
              <td colspan="3">
                <select name="starpoint" id="starpoint">
@@ -370,6 +374,13 @@ margin-top: 139px !important;
              <tr>
               <td colspan="4" style="text-align: right;"><input type="text" name="message" style="height: 35px; color: black; font-size: 15px;" placeholder="한줄평을 입력하세요."/></td>
              </tr>
+        </table>          
+      </form> 
+      
+      <form name="listForm" action="<c:url value='/detail.do'/>" method="post">
+      <input type="hidden" name="pageNo" value="" />
+      <table class="table table-hover my-4" id="ReviewTable">
+          <thead> 
             <tr class="text-center">
                <th scope="col" style="width:20%">별점</th>
                <th scope="col" style="width:40%">한줄평</th>
@@ -413,7 +424,16 @@ margin-top: 139px !important;
             
          </tbody>
       </table>
-      </form>
+			<jsp:include page="paging.jsp" flush="true">
+				<jsp:param name="firstPageNo" value="${paging.firstPageNo}" />
+				<jsp:param name="prevPageNo" value="${paging.prevPageNo}" />
+				<jsp:param name="startPageNo" value="${paging.startPageNo}" />
+				<jsp:param name="pageNo" value="${paging.pageNo}" />
+				<jsp:param name="endPageNo" value="${paging.endPageNo}" />
+				<jsp:param name="nextPageNo" value="${paging.nextPageNo}" />
+				<jsp:param name="finalPageNo" value="${paging.finalPageNo}" />
+			</jsp:include>
+		</form>
    </div>
    <!-- 리뷰 끝 -->
 
@@ -465,8 +485,6 @@ function check_msg() {
             let txt = "장바구니에 담겼습니다!";
             alert(txt);
         });
-
-  </script>
-
+</script>
 </body>
 </html>

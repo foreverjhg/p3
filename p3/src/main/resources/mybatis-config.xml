@@ -12,6 +12,6 @@
           <typeAlias alias="memberVO" type="com.p3.vo.MemberVO"/>
           <typeAlias alias="productVO" type="com.p3.vo.ProductVO"/>
           <typeAlias alias="reviewVO" type="com.p3.vo.ReviewVO"/>
-         
+          <typeAlias alias="pagingVO" type="com.p3.vo.PagingVO"/>
     </typeAliases>
 </configuration>
