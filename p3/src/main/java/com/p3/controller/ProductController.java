@@ -72,25 +72,39 @@ public class ProductController {
       return "product/registration";
    }
 
-   // 상품 정보 조회
-   @RequestMapping(value = "/detail.do")
-   public String detail(Model model, @ModelAttribute("pagingVO") PagingVO pagingVO, @RequestParam(value = "pageNo", required=false) String pageNo) throws Exception {
+   // 상품 리스트 조회
+   @RequestMapping(value = "/menuList.do")   
+   public String menu(Model model)  throws Exception {
       
-      pagingVO.setDishnum("2021_Product_00000");
+      List<ProductVO> list = productService.getMenuList();
+      
+      logger.info(list.toString());
+      
+      model.addAttribute("list", list);
+      
+      return "menu";
+   }
+   
+   // 단품 정보 조회
+   @RequestMapping(value = "/detail.do")
+   public String detail(Model model, @ModelAttribute("pagingVO") PagingVO pagingVO, @RequestParam(value = "pageNo", required=false) String pageNo, @RequestParam(value = "dishnum", required=false) String dishnum,  @RequestParam(value = "flag", required=false) String flag) throws Exception {
+       
+      pagingVO.setDishnum(dishnum);
       
       int totcnt = productService.getReviewTotCnt(pagingVO);
       
       pagingVO.setPageSize(5); // 한페이지에 보일 게시글 수
-	  pagingVO.setPageNo(1); //현재 페이지 번호
-	   
-	   if(pageNo != null) {
-		   pagingVO.setPageNo(Integer.parseInt(pageNo));
-	   }
-	   pagingVO.setBlockSize(10);
-	   pagingVO.setTotalCount(totcnt); //게시물 총 갯수
-	   
-	  model.addAttribute("paging", pagingVO);
-	   
+     pagingVO.setPageNo(1); //현재 페이지 번호
+     
+     System.out.println(flag);
+      if(pageNo != null) {
+         pagingVO.setPageNo(Integer.parseInt(pageNo));
+      }
+      pagingVO.setBlockSize(10);
+      pagingVO.setTotalCount(totcnt); //게시물 총 갯수
+      
+     model.addAttribute("paging", pagingVO);
+      
       ProductVO result = productService.getProdInfo(pagingVO);
       
       List<ReviewVO> list = productService.getReview(pagingVO);
@@ -98,6 +112,7 @@ public class ProductController {
       if(result != null) {
          logger.info("detail : " + result.toString());
          model.addAttribute("result", result);
+         model.addAttribute("flag",flag);
       }
 
       if(list.size() !=0 || list != null) {

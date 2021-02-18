@@ -22,8 +22,8 @@ CNT number not null,
 IMAGE1 blob not null,
 IMAGE2 blob not null,
 IMAGE3 blob not null,
-IMAGE4 blob not null,
-IMAGE5 blob not null);
+IMAGE4 blob ,
+IMAGE5 blob );
 
 create table  delivery
 (ID varchar2(30) ,
@@ -42,3 +42,12 @@ STARPOINT varchar2(30),
 WRITEDATE DATE,
 constraint fk_id2 foreign key(ID) REFERENCES member(ID),
 constraint fk_dish2 foreign key(DISHNUM) REFERENCES meal_kit(DISHNUM));
+
+
+
+ SELECT DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT FROM MEAL_KIT ORDER BY DISHNUM ASC;
+ 
+ UPDATE MEAL_KIT SET DISHNUM='2021_Product_00009' where price=17500;
+ 
+ 
+ 

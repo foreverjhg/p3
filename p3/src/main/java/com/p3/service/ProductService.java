@@ -22,4 +22,6 @@ public interface ProductService {
 
 	int getReviewTotCnt(PagingVO pagingVO) throws Exception;
 
+	List<ProductVO> getMenuList() throws Exception;
+
 }

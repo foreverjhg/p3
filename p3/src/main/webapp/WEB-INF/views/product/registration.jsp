@@ -20,6 +20,7 @@
 				   <option value="1">양식</option>
 				</select>
 	        </td>
+	        
 	        <td>
 	           <input type="text" name="dishname" placeholder="음식이름을 입력하세요.">
 	        </td>

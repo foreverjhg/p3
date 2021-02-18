@@ -21,4 +21,6 @@ public interface ProductDAO {
 	List<ReviewVO> getReview(PagingVO vo) throws Exception;
 
 	int getReviewTotCnt(PagingVO pagingVO) throws Exception;
+
+	List<ProductVO> getMenuList();
 }

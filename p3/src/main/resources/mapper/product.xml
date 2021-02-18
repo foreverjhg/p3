@@ -10,7 +10,7 @@
  </select>
 
  <insert id="setProductReg" parameterType="productVO">
- 	INSERT INTO MEAL_KIT (DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5) VALUES(#{dishnum}, #{dishname}, #{foodkind}, #{price}, #{recipe}, #{cnt}, #{imgby1},#{imgby2},#{imgby3},#{imgby4},#{imgby5})
+    INSERT INTO MEAL_KIT (DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5) VALUES(#{dishnum}, #{dishname}, #{foodkind}, #{price}, #{recipe}, #{cnt}, #{imgby1},#{imgby2},#{imgby3},#{imgby4},#{imgby5})
  </insert>
 
  <select id="getProdInfo" resultType="productVO">
@@ -22,21 +22,25 @@
  </select>
 
   <insert id="setReview" parameterType="reviewVO">
-   		<selectKey keyProperty="num" resultType="int" order="BEFORE">
-			 SELECT COUNT(*) + 1 as num FROM REVIEW
-		</selectKey>
-  	INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate)
+         <selectKey keyProperty="num" resultType="int" order="BEFORE">
+          SELECT COUNT(*) + 1 as num FROM REVIEW
+      </selectKey>
+     INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate)
   </insert>
   
   <select id="getReview" parameterType="pagingVO" resultType="reviewVO">
-	SELECT * FROM (SELECT ROWNUM rnum, A.* FROM(SELECT * FROM REVIEW WHERE DISHNUM = #{dishnum} ORDER
-	BY NUM DESC) A
-	WHERE ROWNUM <![CDATA[<]]>= #{endRowNum })
-	WHERE rnum <![CDATA[>]]>= #{startRowNum }
+   SELECT * FROM (SELECT ROWNUM rnum, A.* FROM(SELECT * FROM REVIEW WHERE DISHNUM = #{dishnum} ORDER
+   BY NUM DESC) A
+   WHERE ROWNUM <![CDATA[<]]>= #{endRowNum })
+   WHERE rnum <![CDATA[>]]>= #{startRowNum }
  </select>
  
   <select id="getReviewTotCnt" resultType="Integer">
-  	SELECT COUNT(*) FROM REVIEW
+     SELECT COUNT(*) FROM REVIEW
   </select>
+ 
+   <select id="getMenuList" resultType="productVO">
+     SELECT DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5 FROM MEAL_KIT ORDER BY DISHNUM DESC
+   </select>
  
 </mapper>

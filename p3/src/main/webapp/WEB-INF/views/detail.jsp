@@ -86,7 +86,7 @@ a.nav-link {
 }
 
 hr {
-    border-top: 1px solid pink;
+    border-top: 1px solid rgba(0,0,0,.1);
     }
     
 .meterial{
@@ -105,7 +105,12 @@ margin-top: 139px !important;
     margin-right: 20px;
 }
 
+.img-fluid{
+	width: 100%;
+}
+
 </style>
+
 <script type="text/javascript">
  function goPage(pageNo) {
 	document.listForm.pageNo.value = pageNo;
@@ -153,7 +158,7 @@ margin-top: 139px !important;
                <ul class="navbar-nav ml-auto mr-auto h5">
                   <li class="nav-item"><a class="nav-link" href="<c:url value='/about.do'/>">호밀</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<c:url value='/menu.do'/>">메뉴</a></li>
+                  <li class="nav-item"><a class="nav-link" href="<c:url value='/menuList.do'/>">메뉴</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
                   <li class="nav-item"><a class="nav-link" href="<c:url value='/photo.do'/>">사진</a></li>
                </ul>
@@ -170,41 +175,65 @@ margin-top: 139px !important;
          <div class="col-6">
             <div class="row">
                <div class="col-2">
-                  <a href="#"><img class="img-fluid mb-3"
-                     src="<c:url value='/imgShow2.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a> <a href="#"><img
-                     class="img-fluid mb-3" src="<c:url value='/imgShow3.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a>
-                  <a href="#"><img class="img-fluid mb-3"
-                     src="<c:url value='/imgShow4.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a> <a href="#"><img
-                     class="img-fluid" src="<c:url value='/imgShow5.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a>
+                  <a href="#"><img class="img-fluid mb-3" src="<c:url value='/imgShow.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a>
+                  <a href="#"><img class="img-fluid mb-3" src="<c:url value='/imgShow2.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a>
+                  <a href="#"><img class="img-fluid mb-3" src="<c:url value='/imgShow3.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a>
+                  <a href="#"><img class="img-fluid mb-3" src="<c:url value='/imgShow4.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a>
+                  <a href="#"><img class="img-fluid mb-3" src="<c:url value='/imgShow5.do'/>?dishnum=<c:out value='${result.dishnum }'/>" alt=""></a>
                </div>
                <div class="col-10 m-0 p-0">
-                  <img class="img-fluid" src="<c:url value='/imgShow.do'/>?dishnum=<c:out value='${result.dishnum }'/>"  alt="">
+                  <img id="big" class="img-fluid" src="<c:url value='/imgShow.do'/>?dishnum=<c:out value='${result.dishnum }'/>"  alt="">
                </div>
 
             </div>
 
          </div>
          <div class="col-6">
-            <h2 class="mb-4">${result.dishname }</h2>
+         
+            <h2 class="mb-4">HOMEAL No.1<br>${result.dishname }</h2>
             <div class="total_price">
                <span class="price"><fmt:formatNumber value="${result.price }" pattern="#,###" /> won</span>
             </div>
             <hr class="my-3 first">
             <p>${result.recipe }</p>
+            <div>
+            	<p>2인분 | 준비 10분 | 조리 30분 | 순한맛</p>
+            </div>
+            
+            <div class="d-flex">
+					<p style="width: 20%">배송방법</p>
+					<p>새벽배송</p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						fill="currentColor" class="bi bi-geo-alt-fill ml-1"
+						viewBox="0 0 16 16">
+  					<path
+							d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+				</svg>
+				</div>
+				<div class="d-flex">
+					<p style="width: 20%">배송비</p>
+					<p style="width: 20%">2,500원</p>
+					<p style="width: 60%">(3만원 이상 구매시 무료배송)</p>
+				</div>
+            
             <hr class="my-3 second">
             <div class="quantity" data-unitprice="<c:out value='${result.price }' />">
                    <span class="price"> 구매수량 </span>
-                   <span class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-dash-square" viewBox="0 0 16 16">
-  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-</svg></span>
+                   <span class="minus">
+	                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-dash-square" viewBox="0 0 16 16">
+	                   <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+	                   <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+	                   </svg>
+                   </span>
                    <input type="text" readonly value="1"  style="height: 35px; width:55px; color: black;">
                    
                    <span class="plus"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
-  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-</svg></span>
-               </div>
+	                   <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+	                   <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+	                   </svg>
+                   </span>
+            </div>
+               
             <hr class="my-3 third">
             <div class="row d-flex justify-content-end">
                <div class="col-6">
@@ -216,10 +245,7 @@ margin-top: 139px !important;
             </div>
          </div>
       </div>
-
-      
-   
-   
+  
       <div class="row my-4">
          <div class="col-12">
             <ul class="nav nav-pills nav-justified">
@@ -229,131 +255,50 @@ margin-top: 139px !important;
          </div>
       </div>
 
-      <div class="row">
-         <div class="col-12">
-            <img src="http://placehold.it/1200x500" alt="" class="img-fluid">
-         </div>
-      </div>
       
       
-      <!-- 추가 시작 -->
-      <div class="jumbotron text-center bg-white px-0 my-3">
-            <h2 class="display-6">정성껏 만든 HOMEAL의 구수한 된장국</h2>
-            <div class="row">
-               <div class="col-5"></div>
-               <div class="col-2">
-                  <hr class="my-5">
-               </div>
-               <div class="col-5"></div>
-            </div>
-            <p class="lead mb-2">구수한 국물 맛, 시금치가 듬뿍!</p>
-            <p class="lead">영양만점 된장국이 뚝딱! 집에서 간편하고 쉽게 HOMEAL하세요</p>
-         </div>
-         
-         <div class="row">
-         <div class="col-12">
-            <img src="http://placehold.it/1200x500" alt="" class="img-fluid">
-         </div>
-      </div>
       
-      <div class="jumbotron text-left bg-white px-0 pb-2 mb-0">
-            <h3 class="display-6">이렇게 보내드려요!</h3>
-            <div class="row">
-               <div class="col-12">
-                  <hr class="my-3">
-               </div>
-            </div>
-        </div>
-        
-        <div class = "row">
-           <div class="col-8">
-              <img src="http://placehold.it/800x500" alt="" class="img-fluid">
-           </div>
-           <div class="col-4">
-              <h2 class = "my-5 text-center">HOMEAL 구성</h2>
-              <div>
-                 <hr class="my-5">
-              </div>
-
-              <p class = "meterial text-center">
-              미역<br><br>한우<br><br>간장<br><br>다진마늘<br><br>참기름<br><br>육수농충액
-              </p>
-           </div>
-      </div>
+      <!-- detail메뉴 추가 시작 -->
+     
+   
+      <c:if test="${flag == 1 }">
+      <jsp:include page="detailJabchae.jsp"></jsp:include>
+      </c:if>
+      <c:if test="${flag == 2 }">
+      <jsp:include page="detailBulgogi.jsp"></jsp:include>
+      </c:if>  
+      <c:if test="${flag == 3 }">
+      <jsp:include page="detailTpasta.jsp"></jsp:include>
+      </c:if> 
+      <c:if test="${flag == 4 }">
+      <jsp:include page="detailCpasta.jsp"></jsp:include>
+      </c:if> 
+      <c:if test="${flag == 5 }">
+      <jsp:include page="detailApasta.jsp"></jsp:include>
+      </c:if>  
+      <c:if test="${flag == 6 }">
+      <jsp:include page="detailSteak.jsp"></jsp:include>
+      </c:if>
+      <c:if test="${flag == 7 }">
+      <jsp:include page="detailGalbijjim.jsp"></jsp:include>
+      </c:if>
+      <c:if test="${flag == 8 }">
+      <jsp:include page="detailSalad.jsp"></jsp:include>
+      </c:if>
+      <c:if test="${flag == 9 }">
+      <jsp:include page="detailDoenjang.jsp"></jsp:include>
+      </c:if>
+      <c:if test="${flag == 10 }">
+      <jsp:include page="detailSeawood.jsp"></jsp:include>
+      </c:if>
+      <!-- detail메뉴 추가 끝 -->
       
-        
-        <div class="jumbotron text-left bg-white px-0 pb-2 mb-0">
-            <h3 class="display-6">HOMEAL과 함께하는 미역국 레시피</h3>
-            <div class="row">
-               <div class="col-12">
-                  <hr class="my-3">
-               </div>
-            </div>
-        </div>
-        
-        <div class="row">
-           <div class = "col-6">
-              <img src="http://placehold.it/600x400" alt="" class="img-fluid">
-              <div class = "col-12 py-3 px-0 d-flex">
-                 <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
-                 <div class="col-11">
-                    <h5>고기, 미역 볶아주기</h5>
-                    <p>냄비에 미역과 고기, 간장양념을 넣고 중불로 볶아줍니다.</p>
-                 </div>
-              </div>
-           </div>
-           
-           <div class = "col-6">
-              <img src="http://placehold.it/600x400" alt="" class="img-fluid">
-              <div class = "col-12 py-3 px-0 d-flex">
-                 <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
-                 <div class="col-11">
-                    <h5>육수 끓여주기</h5>
-                    <p>고기가 익으면 육수농축액과 물800ml를 넣고 끓여줍니다.</p>
-                 </div>
-              </div>
-           </div>
-        </div>       
-        
-        <div class="row">
-           <div class = "col-6">
-              <img src="http://placehold.it/600x400" alt="" class="img-fluid">
-              <div class = "col-12 py-3 px-0 d-flex">
-                 <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
-                 <div class="col-11">
-                    <h5>간 맞추기</h5>
-                    <p>15분정도 끓인 후, 기호에맞게 소금 간을 해주세요.</p>
-                 </div>
-              </div>
-           </div>
-           
-           <div class = "col-6">
-              <img src="http://placehold.it/600x400" alt="" class="img-fluid">
-              <div class = "col-12 py-3 px-0 d-flex">
-                 <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
-                 <div class="col-11">
-                    <h5>Tip. 꿀팁정보!</h5>
-                    <p>물100ml를 더 붓고 약불에서 20~30분 정도 더끓여 주면 깊은 맛의 미역국을 드실 수 있습니다.</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-        
-        <div class="row">
-           <div class="col-12 text-center my-5">
-              <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-</svg> 상기 이미지는 실제와 다를 수 있습니다.</p>
-              
-           </div>
-        </div>   
-      <!-- 추가 끝 -->
+      
+      
+      
       
       <!-- 리뷰 시작 -->
+      
       <form action="<c:url value='/reviewReg.do'/>" method="post" name="frm">
       <input type="hidden" name="dishnum" value="${result.dishnum }">
       <input type="hidden" name="id" value="${name.id }"> 
@@ -475,6 +420,19 @@ function check_msg() {
       frm.submit();
    }
    
+}
+
+var bigPic = document.querySelector("#big");
+var smallPics = document.querySelectorAll(".img-fluid.mb-3");
+
+
+for(var i=0; i<smallPics.length; i++ ){
+   smallPics[i].onclick = changepic;
+}
+
+function changepic(){
+   var smallPicAttribute = this.getAttribute("src");
+   bigPic.setAttribute("src", smallPicAttribute);
 }
 </script>
 <script>
