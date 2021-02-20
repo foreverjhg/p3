@@ -7,7 +7,10 @@ public class ReviewVO {
 	private String dishnum;
 	private String message;
 	private String starpoint;
+	private String tasteevltn;  //¸À Æò°¡
+	private String tastestrng;  //¸À °­µµ
 	private String writedate;
+	private String flag;
 	
 	public Integer getNum() {
 		return num;
@@ -39,17 +42,35 @@ public class ReviewVO {
 	public void setStarpoint(String starpoint) {
 		this.starpoint = starpoint;
 	}
+	public String getTasteevltn() {
+		return tasteevltn;
+	}
+	public void setTasteevltn(String tasteevltn) {
+		this.tasteevltn = tasteevltn;
+	}
+	public String getTastestrng() {
+		return tastestrng;
+	}
+	public void setTastestrng(String tastestrng) {
+		this.tastestrng = tastestrng;
+	}
 	public String getWritedate() {
 		return writedate;
 	}
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
 	}
-	
+	public String getFlag() {
+		return flag;
+	}
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
 	@Override
 	public String toString() {
 		return "ReviewVO [num=" + num + ", id=" + id + ", dishnum=" + dishnum + ", message=" + message + ", starpoint="
-				+ starpoint + ", writedate=" + writedate + "]";
+				+ starpoint + ", tasteevltn=" + tasteevltn + ", tastestrng=" + tastestrng + ", writedate=" + writedate
+				+ "]";
 	}
 		
 }
