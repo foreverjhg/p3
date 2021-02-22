@@ -25,7 +25,7 @@
          <selectKey keyProperty="num" resultType="int" order="BEFORE">
           SELECT COUNT(*) + 1 as num FROM REVIEW
       </selectKey>
-     INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate)
+     INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE, TASTEEVLTN, TASTESTRNG) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate, #{tasteevltn}, #{tastestrng})
   </insert>
   
   <select id="getReview" parameterType="pagingVO" resultType="reviewVO">
@@ -36,7 +36,7 @@
  </select>
  
   <select id="getReviewTotCnt" resultType="Integer">
-     SELECT COUNT(*) FROM REVIEW
+     SELECT COUNT(*) FROM REVIEW WHERE DISHNUM = #{dishnum}
   </select>
  
    <select id="getMenuList" resultType="productVO">

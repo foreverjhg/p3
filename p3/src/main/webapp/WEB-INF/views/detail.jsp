@@ -302,6 +302,7 @@ margin-top: 139px !important;
       <form action="<c:url value='/reviewReg.do'/>" method="post" name="frm">
       <input type="hidden" name="dishnum" value="${result.dishnum }">
       <input type="hidden" name="id" value="${name.id }"> 
+      <input type="hidden" name="flag" value="${flag }">
       <table class="table table-hover my-4" id="ReviewTableWrite">
              <tr>
              <td colspan="3">
@@ -313,6 +314,18 @@ margin-top: 139px !important;
                  <option value="4">&#9733; &#9733; &#9733; &#9733;</option>
                  <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733;</option>
                </select>
+               <select name="tasteevltn" id="tasteevltn">
+	               <option>===¸ÀÆò°¡===</option>
+	               <option value="¸Å¿î¸À">¸Å¿î¸À</option>
+	               <option value="Â§¸À">Â§¸À</option>
+	               <option value="´Ü¸À">´Ü¸À</option>
+               </select>
+               <select name="tastestrng" id="tastestrng">
+	               <option>===¸À°­µµ===</option>
+	               <option value="»ó">»ó</option>
+	               <option value="Áß">Áß</option>
+	               <option value="ÇÏ">ÇÏ</option>
+              </select>
              </td>
              <td colspan="1" style="text-align: right;"><a href="javascript:void(0);" onclick="check_msg()">¸®ºäÀÛ¼º</a></td>
              </tr>
@@ -410,7 +423,7 @@ function check_msg() {
    var frm = $('form[name=frm]');
    var msg = $('input[name="message"]').val();
    var index = $("#starpoint option").index($("#starpoint option:selected"));
-      
+   
    if(index === 0){
       alert("º°Á¡À» ¼±ÅÃÇÏ¼¼¿ä.");
    }else if(msg.length === 0){

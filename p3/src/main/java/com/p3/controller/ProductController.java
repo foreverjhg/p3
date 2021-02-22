@@ -94,9 +94,9 @@ public class ProductController {
       int totcnt = productService.getReviewTotCnt(pagingVO);
       
       pagingVO.setPageSize(5); // 한페이지에 보일 게시글 수
-     pagingVO.setPageNo(1); //현재 페이지 번호
+      pagingVO.setPageNo(1); //현재 페이지 번호
      
-     System.out.println(flag);
+     
       if(pageNo != null) {
          pagingVO.setPageNo(Integer.parseInt(pageNo));
       }
@@ -205,9 +205,9 @@ public class ProductController {
 
       logger.info("reviewReg : " + vo.toString());
 
-      int cnt = productService.setReview(vo);
+      productService.setReview(vo);
 
-      return "redirect:/detail.do";
+      return "redirect:/detail.do?dishnum="+vo.getDishnum()+"&flag="+vo.getFlag();
    }
    
 }
