@@ -43,23 +43,45 @@ public class ProductServiceImpl implements ProductService {
    }
 
    @Override
+   @Transactional
    public int setReview(ReviewVO vo) throws Exception {
       return dao.setReview(vo);
    }
 
    @Override
+   @Transactional
    public List<ReviewVO> getReview(PagingVO vo) throws Exception {
       return dao.getReview(vo);
    }
 
    @Override
+   @Transactional
    public int getReviewTotCnt(PagingVO pagingVO) throws Exception {
       return dao.getReviewTotCnt(pagingVO);
    }
 
    @Override
+   @Transactional
    public List<ProductVO> getMenuList() throws Exception {
       return dao.getMenuList();
    }
+
+	@Override
+	@Transactional
+	public List<ProductVO> gethan() throws Exception {
+		return dao.gethan();
+	}
+
+	@Override
+	@Transactional
+	public List<ProductVO> getyang() throws Exception {
+		return dao.getyang();
+	}
+
+	@Override
+	@Transactional
+	public ProductVO getuserCart(ProductVO cart) throws Exception {
+		return dao.getuserCart(cart);
+	}
 
 }

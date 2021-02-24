@@ -123,7 +123,7 @@ margin-top: 139px !important;
    <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-         <a class="navbar-brand mb-0 h1 " href="#">HOMEAL</a>
+         <a class="navbar-brand mb-0 h1 " href="<c:url value='/sample.do'/>">HOMEAL</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -133,7 +133,7 @@ margin-top: 139px !important;
            <ul class="navbar-nav ml-auto">
 					<c:if test="${member != null}">
          		 <li class="nav-item">
-           		<a class="nav-link" href="#">${member.name}님</a>
+           		<a class="nav-link" href="<c:url value='/cart.do'/>">${member.name}님</a>
           		</li>
           	 </c:if>
             	
@@ -150,6 +150,99 @@ margin-top: 139px !important;
          </div>
       </div>
    </nav>
+
+   <div id = "open" class="modal">
+    <div class="all"> 
+    <div class="form">  
+      <ul class="tab-group">
+        <li class="tab"><a href="#login" class = "join">Log In</a></li>
+        <li class="tab"><a href="#signup" class = "join">Sign Up</a></li>
+      </ul>
+      
+      <div class="tab-content">
+      <div id="login">   
+          <h1 class = "loginh2">Welcome Back!</h1>
+          
+          <form action="<c:url value='/userLog.do'/>" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              ID<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" name="id"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" name = "pw"/>
+          </div>
+        	
+        	
+          <button class="button button-block">Log In</button>
+          
+          </form>
+
+        </div>
+        <div id="signup">   
+          <h1 class = "loginh1">Sign Up for Free</h1>
+          
+          <form action="<c:url value='/userReg.do'/>" method="post">
+          
+          <div class="top-row">
+                   
+            
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              ID<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" name="id"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" name="pw"/>
+          </div>
+          
+          <div class="field-wrap">
+              <label>
+                Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="name"/>
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Address<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="address"/>
+            </div>
+            
+            <div class="field-wrap">
+              <label>
+                Phone<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="phone"/>
+            </div>
+          
+          <button type="submit" class="button button-block">Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+</div>
+  </div>
 
    <div class="container-fluid m-0 p-0">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -197,7 +290,7 @@ margin-top: 139px !important;
             <hr class="my-3 first">
             <p>${result.recipe }</p>
             <div>
-            	<p>2인분 | 준비 10분 | 조리 30분 | 순한맛</p>
+            	<p>2인분 | 준비 10분 | 조리 30분 | 맛 조절 가능</p>
             </div>
             
             <div class="d-flex">
@@ -212,8 +305,7 @@ margin-top: 139px !important;
 				</div>
 				<div class="d-flex">
 					<p style="width: 20%">배송비</p>
-					<p style="width: 20%">2,500원</p>
-					<p style="width: 60%">(3만원 이상 구매시 무료배송)</p>
+					<p style="width: 80%">오픈 이벤트! 3달간 무료!</p>
 				</div>
             
             <hr class="my-3 second">
@@ -225,7 +317,7 @@ margin-top: 139px !important;
 	                   <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 	                   </svg>
                    </span>
-                   <input type="text" readonly value="1"  style="height: 35px; width:55px; color: black;">
+                   <input id="count" name="count" type="text" readonly value="1"  style="height: 35px; width:55px; color: black;">
                    
                    <span class="plus"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
 	                   <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
@@ -236,12 +328,17 @@ margin-top: 139px !important;
                
             <hr class="my-3 third">
             <div class="row d-flex justify-content-end">
+			  <form action="<c:url value='/userCart.do'/>" method="post" name="cart" style = "display: flex; width: 100%;" class="frm">
+                <input type="hidden" name="dishnum" value="${result.dishnum }">
+                <input type="hidden" name="price" value="${result.price }">
+                <input type="hidden" id="usercnt" name="usercnt" value=""> 
                <div class="col-6">
                   <button class="btn btn-block btn-outline-dark" type="submit" id="delivery">장바구니</button>
                </div>
                <div class="col-6">
                   <button class="btn btn-block btn-outline-dark" type="submit">바로구매</button>
                </div>
+			   </form>
             </div>
          </div>
       </div>
@@ -260,35 +357,34 @@ margin-top: 139px !important;
       
       <!-- detail메뉴 추가 시작 -->
      
-   
-      <c:if test="${flag == 1 }">
+      <c:if test="${flag == '2021_Product_00009' }">
       <jsp:include page="detailJabchae.jsp"></jsp:include>
       </c:if>
-      <c:if test="${flag == 2 }">
+      <c:if test="${flag == '2021_Product_00008' }">
       <jsp:include page="detailBulgogi.jsp"></jsp:include>
       </c:if>  
-      <c:if test="${flag == 3 }">
+      <c:if test="${flag == '2021_Product_00007' }">
       <jsp:include page="detailTpasta.jsp"></jsp:include>
       </c:if> 
-      <c:if test="${flag == 4 }">
+      <c:if test="${flag == '2021_Product_00006' }">
       <jsp:include page="detailCpasta.jsp"></jsp:include>
       </c:if> 
-      <c:if test="${flag == 5 }">
+      <c:if test="${flag == '2021_Product_00005' }">
       <jsp:include page="detailApasta.jsp"></jsp:include>
       </c:if>  
-      <c:if test="${flag == 6 }">
+      <c:if test="${flag == '2021_Product_00004' }">
       <jsp:include page="detailSteak.jsp"></jsp:include>
       </c:if>
-      <c:if test="${flag == 7 }">
+      <c:if test="${flag == '2021_Product_00003' }">
       <jsp:include page="detailGalbijjim.jsp"></jsp:include>
       </c:if>
-      <c:if test="${flag == 8 }">
+      <c:if test="${flag == '2021_Product_00002' }">
       <jsp:include page="detailSalad.jsp"></jsp:include>
       </c:if>
-      <c:if test="${flag == 9 }">
+      <c:if test="${flag == '2021_Product_00001' }">
       <jsp:include page="detailDoenjang.jsp"></jsp:include>
       </c:if>
-      <c:if test="${flag == 10 }">
+      <c:if test="${flag == '2021_Product_00000' }">
       <jsp:include page="detailSeawood.jsp"></jsp:include>
       </c:if>
       <!-- detail메뉴 추가 끝 -->
@@ -302,7 +398,6 @@ margin-top: 139px !important;
       <form action="<c:url value='/reviewReg.do'/>" method="post" name="frm">
       <input type="hidden" name="dishnum" value="${result.dishnum }">
       <input type="hidden" name="id" value="${name.id }"> 
-      <input type="hidden" name="flag" value="${flag }">
       <table class="table table-hover my-4" id="ReviewTableWrite">
              <tr>
              <td colspan="3">
@@ -450,12 +545,67 @@ function changepic(){
 </script>
 <script>
 
-        let btn = document.getElementById("delivery");
+	var btn = document.getElementById("delivery");
+	var count = document.getElementById("count");
+	var usercnt = document.getElementById("usercnt");
 
-        btn.addEventListener('click', function(){
-            let txt = "장바구니에 담겼습니다!";
-            alert(txt);
-        });
+	btn.addEventListener('click', function(flag) {
+		alert("장바구니에 담겼습니다!");
+		usercnt.value = count.value;
+	});
+	
+	
 </script>
+
+<script>
+$(".form")
+.find("input, textarea")
+.on("keyup blur focus", function (e) {
+  var $this = $(this),
+    label = $this.prev("label");
+  if (e.type === "keyup") {
+    if ($this.val() === "") {
+      label.removeClass("active highlight");
+    } else {
+      label.addClass("active highlight");
+    }
+  } else if (e.type === "blur") {
+    if ($this.val() === "") {
+      label.removeClass("active highlight");
+    } else {
+      label.removeClass("highlight");
+    }
+  } else if (e.type === "focus") {
+    if ($this.val() === "") {
+      label.removeClass("highlight");
+    } else if ($this.val() !== "") {
+      label.addClass("highlight");
+    }
+  }
+});
+
+	$(".tab a").on("click", function (e) {
+		  e.preventDefault();
+		  $(this).parent().addClass("active");
+		  $(this).parent().siblings().removeClass("active");
+
+		  target = $(this).attr("href");
+
+		   $(".tab-content > div").not(target).hide();
+
+		  $(target).fadeIn(600); 
+		  
+		});
+	
+	$(document).mouseup(function (e){
+		  var all = $(".all");
+		  if(all.has(e.target).length === 0){
+			  all.removeClass("modal");
+			  location.href="#";
+		  }
+		});
+	</script>
 </body>
 </html>
+
+

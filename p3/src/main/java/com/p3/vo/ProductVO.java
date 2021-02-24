@@ -22,6 +22,8 @@ public class ProductVO {
 	private byte imgby3[];
 	private byte imgby4[];
 	private byte imgby5[];
+	private Integer usercnt;
+	private Integer totprice;
 	
 	public String getDishnum() {
 		return dishnum;
@@ -119,6 +121,19 @@ public class ProductVO {
 	public void setImgby5(byte[] imgby5) {
 		this.imgby5 = imgby5;
 	}
+	public Integer getUsercnt() {
+		return usercnt;
+	}
+	public void setUsercnt(Integer usercnt) {
+		this.usercnt = usercnt;
+	}
+	public Integer getTotprice() {
+		return totprice;
+	}
+	public void setTotprice(Integer totprice) {
+		this.totprice = totprice;
+	}
+	
 	@Override
 	public String toString() {
 		return "ProductVO [dishnum=" + dishnum + ", dishname=" + dishname + ", foodkind=" + foodkind + ", price="
@@ -126,13 +141,7 @@ public class ProductVO {
 				+ ", image3=" + image3 + ", image4=" + image4 + ", image5=" + image5 + ", imgby1="
 				+ Arrays.toString(imgby1) + ", imgby2=" + Arrays.toString(imgby2) + ", imgby3="
 				+ Arrays.toString(imgby3) + ", imgby4=" + Arrays.toString(imgby4) + ", imgby5="
-				+ Arrays.toString(imgby5) + "]";
+				+ Arrays.toString(imgby5) + ", usercnt=" + usercnt + ", totprice=" + totprice + "]";
 	}
-	
-
-	
-	
-	
-	
 	
 }

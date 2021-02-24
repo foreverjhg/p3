@@ -1,11 +1,14 @@
 package com.p3.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +24,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.p3.service.ProductService;
+import com.p3.vo.MemberVO;
 import com.p3.vo.PagingVO;
 import com.p3.vo.ProductVO;
 import com.p3.vo.ReviewVO;
 
 @Controller
 public class ProductController {
-
+	ArrayList<ProductVO> list = new ArrayList<ProductVO>();
    @Resource(name = "productService")
    private ProductService productService;
 
@@ -85,6 +89,32 @@ public class ProductController {
       return "menu";
    }
    
+   // 한식 리스트 조회
+   @RequestMapping(value = "/menuhan.do")   
+   public String Hansick(Model model)  throws Exception {
+      
+      List<ProductVO> han = productService.gethan();
+      
+      logger.info(han.toString());
+      
+      model.addAttribute("list", han);
+      
+      return "menu";
+   }
+   
+   // 양식 리스트 조회
+   @RequestMapping(value = "/menuyang.do")   
+   public String Yangsick(Model model)  throws Exception {
+      
+      List<ProductVO> yang = productService.getyang();
+      
+      logger.info(yang.toString());
+      
+      model.addAttribute("list", yang);
+      
+      return "menu";
+   }
+   
    // 단품 정보 조회
    @RequestMapping(value = "/detail.do")
    public String detail(Model model, @ModelAttribute("pagingVO") PagingVO pagingVO, @RequestParam(value = "pageNo", required=false) String pageNo, @RequestParam(value = "dishnum", required=false) String dishnum,  @RequestParam(value = "flag", required=false) String flag) throws Exception {
@@ -94,9 +124,9 @@ public class ProductController {
       int totcnt = productService.getReviewTotCnt(pagingVO);
       
       pagingVO.setPageSize(5); // 한페이지에 보일 게시글 수
-      pagingVO.setPageNo(1); //현재 페이지 번호
+     pagingVO.setPageNo(1); //현재 페이지 번호
      
-     
+     System.out.println(flag);
       if(pageNo != null) {
          pagingVO.setPageNo(Integer.parseInt(pageNo));
       }
@@ -123,7 +153,41 @@ public class ProductController {
 
       return "detail";
    }
+   
+	@RequestMapping(value = "/userCart.do")
+	public String userCart(Model model, @ModelAttribute("cart") ProductVO cart, HttpServletRequest req)
+			throws Exception {
+	
+		ProductVO userCart = productService.getuserCart(cart);
+		userCart.setTotprice(userCart.getPrice() * cart.getUsercnt());
+		userCart.setUsercnt(cart.getUsercnt());
+		
+		logger.info("장바구니 :" + userCart);
 
+		HttpSession session = req.getSession();
+		
+		list.add(userCart);
+		
+		session.setAttribute("userCart", list);
+		
+		return "redirect:/detail.do?dishnum="+cart.getDishnum()+"&flag="+cart.getPrice();
+	}
+	
+	
+	@RequestMapping(value = "/usercartOut.do")
+	public String usercartOut(HttpServletRequest req) throws Exception {
+
+		String url = "";
+		
+		HttpSession session = req.getSession();
+		session.removeAttribute("userCart");
+		list.removeAll(list);
+		url = "cart";
+
+		return url;
+	}
+	
+	
    // 상품 이미지 생성 1
    @RequestMapping(value = "/imgShow.do", produces = "text/plain;charset=EUC-KR", method = RequestMethod.GET)
    public ResponseEntity<byte[]> imageShow(Model model, HttpServletRequest req) throws Exception {
@@ -205,9 +269,9 @@ public class ProductController {
 
       logger.info("reviewReg : " + vo.toString());
 
-      productService.setReview(vo);
+      int cnt = productService.setReview(vo);
 
-      return "redirect:/detail.do?dishnum="+vo.getDishnum()+"&flag="+vo.getFlag();
+      return "redirect:/detail.do";
    }
    
 }
