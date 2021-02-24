@@ -85,7 +85,7 @@
 		<div class="col-12 py-3 px-0 d-flex">
 			<div class="col-1">
 				<a href="#"><img class="rounded-circle"
-					src="http://placehold.it/30x30" alt=""></a>
+					src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a>
 			</div>
 			<div class="col-11">
 				<h5>고기, 미역 볶아주기</h5>
@@ -100,7 +100,7 @@
 		<div class="col-12 py-3 px-0 d-flex">
 			<div class="col-1">
 				<a href="#"><img class="rounded-circle"
-					src="http://placehold.it/30x30" alt=""></a>
+					src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a>
 			</div>
 			<div class="col-11">
 				<h5>육수 끓여주기</h5>
@@ -117,7 +117,7 @@
 		<div class="col-12 py-3 px-0 d-flex">
 			<div class="col-1">
 				<a href="#"><img class="rounded-circle"
-					src="http://placehold.it/30x30" alt=""></a>
+					src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a>
 			</div>
 			<div class="col-11">
 				<h5>간 맞추기</h5>
@@ -132,7 +132,7 @@
 		<div class="col-12 py-3 px-0 d-flex">
 			<div class="col-1">
 				<a href="#"><img class="rounded-circle"
-					src="http://placehold.it/30x30" alt=""></a>
+					src=<c:url value='/resources/img/main/Imagetip.png' /> alt=""></a>
 			</div>
 			<div class="col-11">
 				<h5>Tip. 꿀팁정보!</h5>

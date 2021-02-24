@@ -74,7 +74,7 @@
               <img src=<c:url value='/resources/img/jabchae/jabchae-re2.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>재료 손질하기</h5>
                     <p>채소를 깨끗이 씻어 먹기 좋은 크기로 손질해주세요. 당면은 미온수에 30분 정도 불려주세요. (뜨거운 물에 5분, 찬물에 장시간 불리셔도 됩니다.)</p>
@@ -86,7 +86,7 @@
               <img src=<c:url value='/resources/img/jabchae/jabchae-re5.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>볶아주기</h5>
                     <p>팬에 기름을 넉넉히 두르고 채소를 볶은 후 면과 소스를 넣고 면에 소스가 골고루 배이도록 볶아주세요.</p>
@@ -100,7 +100,7 @@
               <img src=<c:url value='/resources/img/jabchae/jabchae-re4.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>버무려주기</h5>
                     <p>불을 끄고 참기름을 두른 후 볶음참깨와 버무려주세요.</p>
@@ -112,7 +112,7 @@
               <img src=<c:url value='/resources/img/jabchae/jabchae-re6.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Imagetip.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>Tip. 꿀팁정보!</h5>
                     <p>뜨끈한 밥과 볶아드시면 더욱 맛있습니다.</p>

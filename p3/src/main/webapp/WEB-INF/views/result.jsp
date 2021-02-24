@@ -77,6 +77,11 @@ a {
 .card {
 	border: none;
 }
+
+.kk{
+	background-color: #1ab188;
+    border-color: #1ab188;
+}
 </style>
 
 </head>
@@ -94,16 +99,19 @@ a {
 				<p class="lead" ><c:out value="${result.price}" /> 원</p>
 				<hr class="my-3">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-6">
 						<form action="<c:url value='/detail.do'/>?dishnum=${result.dishnum}&flag=${result.dishnum}" method="post" target="_parent">
-						<button type="submit" class="btn btn-secondary btn-lg">상품 보러가기</button>
+						<button type="submit" class="btn btn-secondary btn-lg kk">상품 보러가기</button>
 						</form>
+						</div>
+						<div class="col-6">
 						<form action="<c:url value='/photoCart.do'/>?flag=${result.dishnum}" method="post" target="_parent">
 						<input type="hidden" name="dishnum" value="${result.dishnum }">
                 		<input type="hidden" name="price" value="${result.price }">
                 		<input type="hidden" id="usercnt" name="usercnt" value="1"> 
-						<button id = "delivery" type="submit" class="btn btn-secondary btn-lg">장바구니 담기</button>
+						<button id = "delivery" type="submit" class="btn btn-secondary btn-lg kk">장바구니 담기</button>
 						</form>
+						</div>
 					</div>
 				</div>
 			</div>

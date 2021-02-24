@@ -70,7 +70,7 @@
               <img src="<c:url value='/resources/img/cpasta/Cpastarecipe1.PNG' />" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>재료 손질하기</h5>
                     <p>면을 8~10분간 삶은 후 면수는 따로 남겨주시고, 마늘 양파를 깨끗이 손질 후 마늘은 편썰기, 양파는 잘게, 베이컨은 1cm 정도 먹기 좋은 크기로 잘라주세요.</p>
@@ -82,7 +82,7 @@
                <img src="<c:url value='/resources/img/cpasta/Cpastarecipe2.PNG' />" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>채소 볶아주기</h5>
                     <p>올리브유에 마늘, 베이컨, 양파를 넣고 볶아주세요.</p>
@@ -96,7 +96,7 @@
               <img src="<c:url value='/resources/img/cpasta/Cpastarecipe3.PNG' />" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>볶아주기</h5>
                     <p>팬에 삶은 스파게티 면을 넣고 크림파스타소스, 우유, 면수100ml를 부은 후 다 같이 볶아주세요</p>
@@ -108,7 +108,7 @@
               <img src="<c:url value='/resources/img/cpasta/Cpasta5.jpg' />" style="object-fix: cover" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Imagetip.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>Tip. 꿀팁정보!</h5>
                     <p>빵과 곁들여 드시면 더욱 맛있습니다.</p>

@@ -74,7 +74,7 @@
               <img src=<c:url value='/resources/img/tpasta/tomatopastarecipe1.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>재료 손질하기</h5>
                     <p>파스타 면을 8~10분간 삶아주세요. 마늘, 양파를 깨끗이 손질 후 마늘은 편썰기를 하고 양파는 잘게 썰기를 해주세요.</p>
@@ -86,7 +86,7 @@
               <img src=<c:url value='/resources/img/tpasta/tomatopastarecipe2.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>채소 볶아주기</h5>
                     <p>올리브유에 마늘, 양파를 넣고 볶아주세요.</p>
@@ -100,7 +100,7 @@
               <img src=<c:url value='/resources/img/tpasta/tomatopastarecipe3.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>면, 소스를 넣고 볶아주기</h5>
                     <p>팬에 삶은 스파게티 면을 넣고 소스를 부은 후 다 같이 볶아주세요.</p>
@@ -112,7 +112,7 @@
               <img src=<c:url value='/resources/img/tpasta/tomatopastarecipe4.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Imagetip.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>Tip. 꿀팁정보!</h5>
                     <p>건고추 양을 조절하여 매운맛을 기호에 맞게 조절할 수 있습니다.</p>

@@ -70,7 +70,7 @@
               <img src="<c:url value='/resources/img/salad/make2.PNG' />" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>채소 세척하기</h5>
                     <p>채소들은 흐르는 물에 세척하여 준비해줍니다.(1차세척과정을 거친제품이지만 중간에 이물이 혼입될 수 있으므로 2차세척을 해주면 더욱 좋습니다.)</p>
@@ -82,7 +82,7 @@
                <img src="<c:url value='/resources/img/salad/make3.PNG' />" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>재료 손질하기</h5>
                     <p>방울토마토는 꼭지를 제거하고 오이는 슬라이스,올리브는 반으로 잘라줍니다</p>
@@ -96,7 +96,7 @@
               <img src="<c:url value='/resources/img/salad/make1.PNG' />" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>텐더 익혀주기</h5>
                     <p>치킨텐더는 180도 기름에서 10분간 익혀주세요(에어프라이어 기준 180도 10~15분)</p>
@@ -108,7 +108,7 @@
               <img src="<c:url value='/resources/img/salad/make4.PNG' />" style="object-fix: cover" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image4.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>마무리하기</h5>
                     <p>접시를 준비하여 야채를 보기 좋게 담고 텐더와 올리브,케이퍼,소스,양파후레이크를 차례대로 올려줍니다</p>

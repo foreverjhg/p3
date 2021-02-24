@@ -112,6 +112,33 @@ margin-top: 139px !important;
 .second {
     margin-top: 65px !important;
 }
+
+.rounded-circle {
+	width: 200%;
+}
+
+.quantity input{
+	color : #1ab188!important;
+}
+
+.middle {
+	border : 1px solid #1ab188;
+}
+
+.active{
+   background-color: #1ab188 !important;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #1ab188;
+    border-color: #1ab188;
+}
+
+.page-link{
+	color: #1ab188;
+}
 </style>
 
 <script type="text/javascript">
@@ -119,6 +146,7 @@ margin-top: 139px !important;
 	document.listForm.pageNo.value = pageNo;
 	document.listForm.submit();
  }
+
 </script>
 </head>
 
@@ -349,8 +377,8 @@ margin-top: 139px !important;
       <div class="row my-4">
          <div class="col-12">
             <ul class="nav nav-pills nav-justified">
-               <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">상세정보</a></li>
-               <li class="nav-item"><a class="nav-link" href="#ReviewTable">리뷰(<c:out value='${size }'/>)</a></li>
+               <li class="nav-item py-1"><a class="nav-link active middle py-3" aria-current="page" href="#">상세정보</a></li>
+               <li class="nav-item py-1"><a class="nav-link middle py-3" href="#ReviewTable">리뷰(<c:out value='${size }'/>)</a></li>
             </ul>
          </div>
       </div>

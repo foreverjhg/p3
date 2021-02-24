@@ -74,7 +74,7 @@
               <img src=<c:url value='/resources/img/steak/steak_re01.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>소고기 마리네이드(간) 하기</h5>
                     <p>핏물을 제거한 고기에 올리브오일, 허브솔트로 마리네이드(간)해줍니다.</p>
@@ -86,7 +86,7 @@
               <img src=<c:url value='/resources/img/steak/steak_re02.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>가니쉬(곁들임 채소, 과일) 굽기</h5>
                     <p>올리브오일을 두른 팬에 가니쉬를 핑크소트로 간하여 중불에 구워줍니다.</p>
@@ -100,7 +100,7 @@
               <img src=<c:url value='/resources/img/steak/steak_re03.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>스테이크 굽기</h5>
                     <p>팬을 예열한 뒤 버터, 올리브유로 소고기를 강불에 앞뒤로 각각 1분씩 익혀줍니다.</p>
@@ -112,7 +112,7 @@
               <img src=<c:url value='/resources/img/steak/steak_re04.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Imagetip.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>플레이팅 하기</h5>
                     <p>스테이크와 가니쉬를 소스와 곁들여 플레이팅합니다.</p>

@@ -183,7 +183,7 @@ public class ProductController {
 		
 		session.setAttribute("userCart", list);
 		
-		return "redirect:/detail.do?dishnum="+cart.getDishnum()+"&flag="+cart.getPrice();
+		return "redirect:/detail.do?dishnum="+cart.getDishnum()+"&flag="+cart.getDishnum();
 	}
 	
 	@RequestMapping(value = "/photoCart.do")

@@ -74,7 +74,7 @@
               <img src=<c:url value='/resources/img/bulgogi/bulgogi_re1.jpg' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>육수 끓여주기</h5>
                     <p>뚝배기 그릇에 육수팩을 먼저 붓고 끓여줍니다.</p>
@@ -86,7 +86,7 @@
               <img src=<c:url value='/resources/img/bulgogi/bulgogi_re2.jpg' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>불고기소스 넣기</h5>
                     <p>뚝배기가 끓기 시작하면 소스팩을 넣고 계속 끓여주세요.</p>
@@ -100,7 +100,7 @@
               <img src=<c:url value='/resources/img/bulgogi/bulgogi_re3.jpg' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>고기, 야채 끓여주기</h5>
                     <p>고기가 반정도 익으면 나머지 야채를 넣고 끓여줍니다.(이때 당면을 추가해주세요.)</p>
@@ -112,7 +112,7 @@
               <img src="<c:url value='/resources/img/bulgogi/bulgogi10.JPG' />" style="object-fix: cover" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Imagetip.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>Tip. 꿀팁정보!</h5>
                     <p>상추와 곁들여드시면 더욱 맛있습니다.</p>

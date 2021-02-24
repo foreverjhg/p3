@@ -74,7 +74,7 @@
               <img src=<c:url value='/resources/img/galbijjim/gal1.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>채소 손질하기</h5>
                     <p>당근은 모서리를 둥글게 깎아줍니다.</p>
@@ -86,7 +86,7 @@
               <img src=<c:url value='/resources/img/galbijjim/gal2.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>끓여주기</h5>
                     <p>냄비에 물 450ml와 소갈비찜, 당근, 소스2/3을 넣고 끓으면 센 불에서 5분간 더 끓여줍니다.</p>
@@ -100,7 +100,7 @@
               <img src=<c:url value='/resources/img/galbijjim/gal3.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>야채 넣어주기</h5>
                     <p>감자,양파,쥬키니 호박, 대추 은행을 넣고 5~7분간 더 끓여줍니다.</p>
@@ -112,7 +112,7 @@
               <img src=<c:url value='/resources/img/galbijjim/gal5.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Imagetip.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>Tip. 꿀팁정보!</h5>
                     <p>소스는 기호에 따라 조절하여 주세요.</p>

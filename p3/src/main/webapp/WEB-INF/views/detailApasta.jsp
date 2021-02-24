@@ -74,7 +74,7 @@
               <img src=<c:url value='/resources/img/apasta/agliorecipe1.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image1.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>면 삶아주기</h5>
                     <p>냄비에 물 1.4L(종이컵 7컵), 소금 1Ts, 오일 1Ts를 넣고 물을 끓여주세요. 물이 끓으면 파스타 면을 7분 간 삶은 다음 면을 건져에 체에 받쳐 물기를 제거하세요. </p>
@@ -86,7 +86,7 @@
               <img src=<c:url value='/resources/img/apasta/agliorecipe2.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image2.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>베트남고추, 마늘 볶기</h5>
                     <p>팬에 올리브 오일 40g(1/2용량)을 두르고 마늘, 베트남고추를 넣어 2~3분간 볶아주세요. 마늘은 갈색이 날 정도로 볶아주세요.</p>
@@ -100,7 +100,7 @@
               <img src=<c:url value='/resources/img/apasta/agliorecipe3.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image3.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>면 볶아주기</h5>
                     <p>같은 팬에 미리 삶아 놓은 면, 시즈닝을 넣고 1분간 볶아주세요.</p>
@@ -112,7 +112,7 @@
               <img src=<c:url value='/resources/img/apasta/agliorecipe4.PNG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
-                     src="http://placehold.it/30x30" alt=""></a></div>
+                     src=<c:url value='/resources/img/main/Image4.png' /> alt=""></a></div>
                  <div class="col-11">
                     <h5>올리브오일 섞어주기</h5>
                     <p>남은 올리브오일 40g(1/2용량)을 넣어 골고루 섞어주세요.</p>

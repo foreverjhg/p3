@@ -303,16 +303,16 @@ a.nav-link {
              <div class="col-lg-4 col-md-6 mb-4">
                <div class="card h-100">
                   <a href="<c:url value='/detail.do'/>?dishnum=${item.dishnum}&flag=${item.dishnum}"><img class="img-fluid" src="<c:url value='/imgShow.do'/>?dishnum=<c:out value='${item.dishnum }'/>"  alt=""></a>
-                  <div class="card-body">
-                     <h4 class="card-title">
-                        <a href="<c:url value='/detail.do'/>"><c:out value='${item.dishname }'/></a>
+                  <div class="card-body pt-3 pb-2 px-2">
+                     <h4 class="card-title mt-2 mb-0">
+                        <a href="<c:url value='/detail.do'/>?dishnum=${item.dishnum}&flag=${item.dishnum}"><c:out value='${item.dishname }'/></a>
                      </h4>
                      <div class="row">
                         <div class="col-10">
-                           <h5><fmt:formatNumber value="${item.price }" pattern="#,###" /></h5>
+                           <h5 class="mt-2 mb-0"><fmt:formatNumber value="${item.price }" pattern="#,###" /></h5>
                         </div>
                         <div class="col-2 pr-2">
-                           <a href="#"><img class="img-fluid rounded-circle"
+                           <a href="#"><img class="img-fluid rounded-circle pr-1"
                      src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
                         </div>
                      </div>
