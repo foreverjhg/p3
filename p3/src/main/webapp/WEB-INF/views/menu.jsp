@@ -147,7 +147,7 @@ a.nav-link {
           <c:forEach var="item" items="${list }" varStatus="status">  
              <div class="col-lg-4 col-md-6 mb-4">
                <div class="card h-100">
-                  <a href="<c:url value='/detail.do'/>?dishnum=${item.dishnum}&flag=${status.count}"><img class="img-fluid" src="<c:url value='/imgShow.do'/>?dishnum=<c:out value='${item.dishnum }'/>"  alt=""></a>
+                  <a href="<c:url value='/detail.do'/>?dishnum=${item.dishnum}&flag=${item.dishnum}"><img class="img-fluid" src="<c:url value='/imgShow.do'/>?dishnum=<c:out value='${item.dishnum }'/>"  alt=""></a>
                   <div class="card-body">
                      <h4 class="card-title">
                         <a href="<c:url value='/detail.do'/>"><c:out value='${item.dishname }'/></a>

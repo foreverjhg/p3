@@ -432,6 +432,8 @@ margin-top: 139px !important;
       
       <form name="listForm" action="<c:url value='/detail.do'/>" method="post">
       <input type="hidden" name="pageNo" value="" />
+      <input type="hidden" name="dishnum" value="${result.dishnum }">
+      <input type="hidden" name="flag" value="${result.dishnum }">
       <table class="table table-hover my-4" id="ReviewTable">
           <thead> 
             <tr class="text-center">
@@ -584,7 +586,7 @@ $(".form")
   }
 });
 
-	$(".tab a").on("click", function (e) {
+	/* $(".tab a").on("click", function (e) {
 		  e.preventDefault();
 		  $(this).parent().addClass("active");
 		  $(this).parent().siblings().removeClass("active");
@@ -603,7 +605,7 @@ $(".form")
 			  all.removeClass("modal");
 			  location.href="#";
 		  }
-		});
+		}); */
 	</script>
 </body>
 </html>
