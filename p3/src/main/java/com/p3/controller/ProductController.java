@@ -269,9 +269,9 @@ public class ProductController {
 
       logger.info("reviewReg : " + vo.toString());
 
-      int cnt = productService.setReview(vo);
+      productService.setReview(vo);
 
-      return "redirect:/detail.do";
+      return "redirect:/detail.do?dishnum="+vo.getDishnum()+"&flag="+vo.getDishnum();
    }
    
 }
