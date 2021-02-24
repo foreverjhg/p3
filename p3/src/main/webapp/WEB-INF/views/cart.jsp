@@ -126,7 +126,7 @@ span {
 	
 	<nav class="navbar navbar-expand-lg fixed-top bg-light">
 		<div class="container">
-			<a class="navbar-brand mb-0 h1 " href="<c:url value='/sample.do'/>">HOMEAL</a>
+			<a class="navbar-brand mb-0 h1 " href="<c:url value='/best.do'/>">HOMEAL</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">

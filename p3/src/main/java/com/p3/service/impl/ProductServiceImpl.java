@@ -89,4 +89,11 @@ public class ProductServiceImpl implements ProductService {
    public ProductVO getProdInfo(ProductVO vo) throws Exception {
       return dao.getuserCart(vo);
    }
+   
+   @Override
+   @Transactional
+   public List<ProductVO> getbestList() throws Exception {
+      return dao.getbestList();
+   }
+   
 }

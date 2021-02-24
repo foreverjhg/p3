@@ -91,12 +91,19 @@ a {
 			<div class="col-6 px-0 d-flex align-items-center justify-content-center flex-column border border-secondary">
 				<h3><c:out value="${result.dishname}" /></h3>
 				<hr class="my-3">
-				<p class="lead"><c:out value="${result.price}" /></p>
+				<p class="lead" ><c:out value="${result.price}" /> 원</p>
 				<hr class="my-3">
 				<div class="row">
 					<div class="col-12">
-						<button type="button" class="btn btn-secondary btn-lg g">상품 보러가기</button>
-						<button type="button" class="btn btn-secondary btn-lg">장바구니 담기</button>
+						<form action="<c:url value='/detail.do'/>?dishnum=${result.dishnum}&flag=${result.dishnum}" method="post" target="_parent">
+						<button type="submit" class="btn btn-secondary btn-lg">상품 보러가기</button>
+						</form>
+						<form action="<c:url value='/photoCart.do'/>?flag=${result.dishnum}" method="post" target="_parent">
+						<input type="hidden" name="dishnum" value="${result.dishnum }">
+                		<input type="hidden" name="price" value="${result.price }">
+                		<input type="hidden" id="usercnt" name="usercnt" value="1"> 
+						<button id = "delivery" type="submit" class="btn btn-secondary btn-lg">장바구니 담기</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -109,6 +116,19 @@ a {
 	<script src="<c:url value='/resources/vendor/jquery/jquery.min.js' />"></script>
 	<script
 		src="<c:url value='/resources/vendor/bootstrap/js/bootstrap.bundle.min.js' />"></script>
+		<script>
+
+	var btn = document.getElementById("delivery");
+	var count = document.getElementById("count");
+	var usercnt = document.getElementById("usercnt");
+
+	btn.addEventListener('click', function(flag) {
+		alert("장바구니에 담겼습니다!");
+		usercnt.value = count.value;
+	});
+	
+	
+</script>
 
 </body>
 </html>

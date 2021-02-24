@@ -29,4 +29,6 @@ public interface ProductDAO {
 	List<ProductVO> getyang() throws Exception;
 
 	ProductVO getuserCart(ProductVO cart) throws Exception;
+
+	List<ProductVO> getbestList() throws Exception;
 }

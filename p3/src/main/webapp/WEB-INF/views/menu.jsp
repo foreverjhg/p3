@@ -84,7 +84,7 @@ a.nav-link {
    <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-         <a class="navbar-brand mb-0 h1 " href="/sample.do">HOMEAL</a>
+         <a class="navbar-brand mb-0 h1 " href="<c:url value='/best.do'/>">HOMEAL</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@ a.nav-link {
             <ul class="navbar-nav ml-auto">
                <c:if test="${member != null}">
                 <li class="nav-item">
-                 <a class="nav-link" href="#">${member.name}님</a>
+                 <a class="nav-link" href="<c:url value='/cart.do'/>">${member.name}님</a>
                 </li>
               </c:if>
                
@@ -134,10 +134,11 @@ a.nav-link {
       <div class="row my-4">
          <div class="col">
             <ul class="nav justify-content-center">
-               <li class="nav-item"><a class="nav-link active" href="#">전체</a>
+               <li class="nav-item"><a class="nav-link active" href="<c:url value='/menuList.do'/>">전체</a>
                </li>
-               <li class="nav-item"><a class="nav-link" href="#">한식</a></li>
-               <li class="nav-item"><a class="nav-link" href="#">양식</a></li>
+               <li class="nav-item"><a class="nav-link" href="<c:url value='/menuhan.do'/>">한식</a></li>
+               
+               <li class="nav-item"><a class="nav-link" href="<c:url value='/menuyang.do'/>">양식</a></li>
             </ul>
          </div>
       </div>
@@ -177,7 +178,6 @@ a.nav-link {
                   aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
                </a></li>
                <li class="page-item"><a class="page-link" href="#">1</a></li>
-               <li class="page-item"><a class="page-link" href="#">2</a></li>
                <li class="page-item"><a class="page-link" href="#"
                   aria-label="Next"> <span aria-hidden="true">&raquo;</span>
                </a></li>

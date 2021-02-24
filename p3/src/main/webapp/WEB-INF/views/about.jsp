@@ -83,7 +83,7 @@ a {
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a class="navbar-brand mb-0 h1 " href="<c:url value='/sample.do'/>">HOMEAL</a>
+			<a class="navbar-brand mb-0 h1 " href="<c:url value='/best.do'/>">HOMEAL</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -92,20 +92,15 @@ a {
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<c:if test="${member != null}">
-         		 <li class="nav-item">
-           		<a class="nav-link" href="#">${member.name}님</a>
-          		</li>
-          	 </c:if>
-            	
-               <li class="nav-item">
-               <c:if test="${member != null}">
-               <a class = "nav-link" href="<c:url value='/userLogOut.do'/>">로그아웃</a>
-               </c:if>
-               
-               <c:if test="${member == null}">
-               <a class="nav-link" href="#open">로그인</a>
-               </c:if>
-               </li>
+						<li class="nav-item"><a class="nav-link" href="<c:url value='/cart.do'/>">${member.name}님</a>
+						</li>
+					</c:if>
+
+					<li class="nav-item"><c:if test="${member != null}">
+							<a class="nav-link" href="<c:url value='/userLogOut.do'/>">로그아웃</a>
+						</c:if> <c:if test="${member == null}">
+							<a class="nav-link" href="#open">로그인</a>
+						</c:if></li>
 				</ul>
 			</div>
 		</div>
@@ -116,11 +111,14 @@ a {
 			<div class="container">
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto mr-auto h5">
-						<li class="nav-item"><a class="nav-link" href="<c:url value='/about.do'/>">호밀</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<c:url value='/menuList.do'/>">메뉴</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
-                  <li class="nav-item"><a class="nav-link" href="<c:url value='/photo.do'/>">사진</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="<c:url value='/about.do'/>">호밀</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="<c:url value='/menuList.do'/>">메뉴</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="<c:url value='/photo.do'/>">사진</a></li>
 					</ul>
 				</div>
 			</div>
@@ -131,6 +129,9 @@ a {
 
 	<div class="container">
 
+		<img src="<c:url value='/resources/img/about/about1.jpg' />"
+			class="img-fluid mt-4" alt="">
+
 		<div class="jumbotron text-center bg-white px-0">
 			<h2 class="display-6">HOMEAL'S STORY</h2>
 			<div class="row">
@@ -140,14 +141,16 @@ a {
 				</div>
 				<div class="col-5"></div>
 			</div>
-			<p class="lead mb-0">먹고 싶은 음식이 있어도 걱정 NO!</p>
-			<p class="lead">이젠 집에서 간편하게 요리하세요!</p>
+			<p class="lead mb-0">일상에서 먹어왔던 음식들</p>
+			<p class="lead mb-3">갑자기 집에서도 먹고 싶다면?</p>
+			<p class="lead mb-0">집에서 간편하게 요리해보세요!</p>
 		</div>
 
-		<img src="http://placehold.it/1200x600" class="img-fluid" alt="">
+		<img src="<c:url value='/resources/img/about/about4.jpg' />"
+			class="img-fluid" alt="">
 
-		<div class="jumbotron text-center bg-primary px-0 mb-0">
-			<h2 class="display-6">BEST ITEMS</h2>
+		<div class="jumbotron text-center bg-white px-0 mb-0">
+			<h2 class="display-6">HOMEAL'S RESPONSIBILITY</h2>
 			<div class="row">
 				<div class="col-5"></div>
 				<div class="col-2">
@@ -155,10 +158,28 @@ a {
 				</div>
 				<div class="col-5"></div>
 			</div>
-			<p class="lead">호밀의 베스트 상품을 집에서 만나보세요!</p>
+			<p class="lead mb-0">당일 수확된 신선한 재료를 손질하여</p>
+			<p class="lead">호밀의 마음을 함께 담아 전달드립니다</p>
 		</div>
 
-		<img src="http://placehold.it/1200x600" class="img-fluid" alt="">
+		<img src="<c:url value='/resources/img/about/about3.jpg' />"
+			class="img-fluid" alt="">
+
+		<div class="jumbotron text-center bg-white px-0 mb-0">
+			<h2 class="display-6">HOMEAL'S SERVICE</h2>
+			<div class="row">
+				<div class="col-5"></div>
+				<div class="col-2">
+					<hr class="my-5">
+				</div>
+				<div class="col-5"></div>
+			</div>
+			<p class="lead mb-0">호밀에서는 고객의 데이터를 바탕으로</p>
+			<p class="lead">식단관리 및 맞춤형 레시피를 제공드립니다</p>
+		</div>
+
+		<img src="<c:url value='/resources/img/about/about2.jpg' />"
+			class="img-fluid mb-4" alt="">
 
 	</div>
 

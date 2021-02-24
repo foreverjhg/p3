@@ -32,4 +32,6 @@ public interface ProductService {
 	
     ProductVO getProdInfo(ProductVO vo) throws Exception;
 
+	List<ProductVO> getbestList() throws Exception;
+
 }

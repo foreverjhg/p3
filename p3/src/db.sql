@@ -49,5 +49,11 @@ constraint fk_dish2 foreign key(DISHNUM) REFERENCES meal_kit(DISHNUM));
  
  UPDATE MEAL_KIT SET DISHNUM='2021_Product_00009' where price=17500;
  
+ SELECT * FROM (SELECT ROWNUM rnum, A.* FROM(SELECT * FROM REVIEW WHERE DISHNUM = '2021_Product_00008'  ORDER
  
+ 
+ select * from member;
+ select * from review;
+ 
+
  

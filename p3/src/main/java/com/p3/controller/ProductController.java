@@ -89,6 +89,19 @@ public class ProductController {
       return "menu";
    }
    
+   // 베스트 조회
+   @RequestMapping(value = "/best.do")   
+   public String best(Model model)  throws Exception {
+      
+      List<ProductVO> list = productService.getbestList();
+      
+      logger.info(list.toString());
+      
+      model.addAttribute("list", list);
+      
+      return "sample";
+   }
+   
    // 한식 리스트 조회
    @RequestMapping(value = "/menuhan.do")   
    public String Hansick(Model model)  throws Exception {
@@ -124,7 +137,7 @@ public class ProductController {
       int totcnt = productService.getReviewTotCnt(pagingVO);
       
       pagingVO.setPageSize(5); // 한페이지에 보일 게시글 수
-     pagingVO.setPageNo(1); //현재 페이지 번호
+      pagingVO.setPageNo(1); //현재 페이지 번호
      
      System.out.println(flag);
       if(pageNo != null) {
@@ -172,6 +185,27 @@ public class ProductController {
 		
 		return "redirect:/detail.do?dishnum="+cart.getDishnum()+"&flag="+cart.getPrice();
 	}
+	
+	@RequestMapping(value = "/photoCart.do")
+	public String photoCart(Model model, @ModelAttribute("cart") ProductVO cart, HttpServletRequest req)
+			throws Exception {
+	
+		ProductVO userCart = productService.getuserCart(cart);
+		userCart.setTotprice(userCart.getPrice() * cart.getUsercnt());
+		userCart.setUsercnt(cart.getUsercnt());
+		
+		logger.info("장바구니 :" + userCart);
+
+		HttpSession session = req.getSession();
+		
+		list.add(userCart);
+		
+		session.setAttribute("userCart", list);
+		
+		return "redirect:/menuList.do";
+	}
+	
+	
 	
 	
 	@RequestMapping(value = "/usercartOut.do")
@@ -265,7 +299,7 @@ public class ProductController {
 
    // 상품 한줄평 작성
    @RequestMapping(value = "/reviewReg.do")
-   public String review(Model model, @ModelAttribute("vo") ReviewVO vo) throws Exception {
+   public String review(Model model, @ModelAttribute("vo") ReviewVO vo ) throws Exception {
 
       logger.info("reviewReg : " + vo.toString());
 

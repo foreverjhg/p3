@@ -75,6 +75,7 @@ a {
 .card {
 	border: none;
 }
+
 </style>
 
 </head>
@@ -83,7 +84,7 @@ a {
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a class="navbar-brand mb-0 h1 " href="<c:url value='/sample.do'/>">HOMEAL</a>
+			<a class="navbar-brand mb-0 h1 " href="<c:url value='/best.do'/>">HOMEAL</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +93,7 @@ a {
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<c:if test="${member != null}">
-						<li class="nav-item"><a class="nav-link" href="#">${member.name}님</a>
+						<li class="nav-item"><a class="nav-link" href="<c:url value='/cart.do'/>">${member.name}님</a>
 						</li>
 					</c:if>
 
@@ -115,7 +116,7 @@ a {
 							href="<c:url value='/about.do'/>">호밀</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="<c:url value='/menu.do'/>">메뉴</a></li>
+							href="<c:url value='/menuList.do'/>">메뉴</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">ㅣ</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="<c:url value='/photo.do'/>">사진</a></li>
@@ -125,12 +126,11 @@ a {
 		</nav>
 	</div>
 
-	<!-- Page Content -->
 
 	<div class="container">
 
 		<div class="jumbotron text-center bg-white px-0 pb-2">
-			<h2 class="display-6">사진검색</h2>
+			<h2 class="display-6">PHOTO SERVICE</h2>
 			<div class="row">
 				<div class="col-5"></div>
 				<div class="col-2">
@@ -138,7 +138,8 @@ a {
 				</div>
 				<div class="col-5"></div>
 			</div>
-			<p class="lead">먹고 싶은 음식 사진을 올려주세요</p>
+			<p class="lead mb-0">일상에서 찍었던 음식이 갑자기 먹고 싶을땐??</p>
+			<p class="lead">사진 한 장으로 집까지 원클릭 배송 서비스!</p>
 		</div>
 
 		<div class="embed-responsive embed-responsive-1by1">
@@ -148,24 +149,20 @@ a {
 	</div>
 	<!-- /.container -->
 
+
 	<!-- Footer -->
 	<footer class="py-5 bg-light">
 		<div class="container">
 			<p class="m-0 text-center text-#E5E9EF">Copyright &copy; HOMEAL
 				2021</p>
 		</div>
-		<!-- /.container -->
 	</footer>
+
+
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="<c:url value='/resources/vendor/jquery/jquery.min.js' />"></script>
 	<script src="<c:url value='/resources/vendor/bootstrap/js/bootstrap.bundle.min.js' />"></script>
-	<script>
-	
-	$(“button”).click(function(){
-		  alert(“hello”);
-		});
-	
-	</script>
+
 </body>
 </html>

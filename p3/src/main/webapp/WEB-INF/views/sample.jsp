@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -83,7 +84,7 @@ a.nav-link {
    <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-         <a class="navbar-brand mb-0 h1 " href="#">HOMEAL</a>
+         <a class="navbar-brand mb-0 h1 " href="<c:url value='/best.do'/>">HOMEAL</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +95,7 @@ a.nav-link {
             	
              <c:if test="${member != null}">
          		 <li class="nav-item">
-           		<a class="nav-link" href="#">${member.name}님</a>
+           		<a class="nav-link" href="<c:url value='/cart.do'/>">${member.name}님</a>
           		</li>
           	 </c:if>
             	
@@ -296,75 +297,33 @@ a.nav-link {
             <p class="lead">호밀의 베스트 상품을 집에서 만나보세요!</p>
          </div>
 
-         <div class="row">
-
-            <div class="col-lg-4 col-md-6 mb-4">
+         <div class="row">            
+            
+			 <c:forEach var="item" items="${list }" varStatus="status">  
+             <div class="col-lg-4 col-md-6 mb-4">
                <div class="card h-100">
-                  <a href="#"><img class="card-img-top p-3"
-                     src="http://placehold.it/700x700" alt=""></a>
+                  <a href="<c:url value='/detail.do'/>?dishnum=${item.dishnum}&flag=${item.dishnum}"><img class="img-fluid" src="<c:url value='/imgShow.do'/>?dishnum=<c:out value='${item.dishnum }'/>"  alt=""></a>
                   <div class="card-body">
                      <h4 class="card-title">
-                        <a href="#">Item One</a>
+                        <a href="<c:url value='/detail.do'/>"><c:out value='${item.dishname }'/></a>
                      </h4>
                      <div class="row">
-                     	<div class="col-10">
-                     		<h5>$24.99</h5>
-                     	</div>
-                     	<div class="col-2 pr-2">
-                     		<a href="#"><img class="img-fluid rounded-circle"
+                        <div class="col-10">
+                           <h5><fmt:formatNumber value="${item.price }" pattern="#,###" /></h5>
+                        </div>
+                        <div class="col-2 pr-2">
+                           <a href="#"><img class="img-fluid rounded-circle"
                      src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
-                     	</div>
+                        </div>
                      </div>
                      
                   </div>
+                 </div>
                </div>
-            </div>
+          </c:forEach>
+       </div>  
 
-            <div class="col-lg-4 col-md-6 mb-4">
-               <div class="card h-100">
-                  <a href="#"><img class="card-img-top p-3"
-                     src="http://placehold.it/700x700" alt=""></a>
-                  <div class="card-body">
-                     <h4 class="card-title">
-                        <a href="#">Item One</a>
-                     </h4>
-                     <div class="row">
-                     	<div class="col-10">
-                     		<h5>$24.99</h5>
-                     	</div>
-                     	<div class="col-2 pr-2">
-                     		<a href="#"><img class="img-fluid rounded-circle"
-                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
-                     	</div>
-                     </div>
-                     
-                  </div>
-               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 mb-4">
-               <div class="card h-100">
-                  <a href="#"><img class="card-img-top p-3"
-                     src="http://placehold.it/700x700" alt=""></a>
-                  <div class="card-body">
-                     <h4 class="card-title">
-                        <a href="#">Item One</a>
-                     </h4>
-                     <div class="row">
-                     	<div class="col-10">
-                     		<h5>$24.99</h5>
-                     	</div>
-                     	<div class="col-2 pr-2">
-                     		<a href="#"><img class="img-fluid rounded-circle"
-                     src="<c:url value='/resources/img/main/cart-icon.png' />" alt=""></a>
-                     	</div>
-                     </div>
-                     
-                  </div>
-               </div>
-            </div>
-
-         </div>
+           
          <!-- /.row -->
 
       </div>

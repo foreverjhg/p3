@@ -109,6 +109,9 @@ margin-top: 139px !important;
 	width: 100%;
 }
 
+.second {
+    margin-top: 65px !important;
+}
 </style>
 
 <script type="text/javascript">
@@ -123,7 +126,7 @@ margin-top: 139px !important;
    <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-         <a class="navbar-brand mb-0 h1 " href="<c:url value='/sample.do'/>">HOMEAL</a>
+         <a class="navbar-brand mb-0 h1 " href="<c:url value='/best.do'/>">HOMEAL</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -282,7 +285,6 @@ margin-top: 139px !important;
 
          </div>
          <div class="col-6">
-         
             <h2 class="mb-4">HOMEAL No.1<br>${result.dishname }</h2>
             <div class="total_price">
                <span class="price"><fmt:formatNumber value="${result.price }" pattern="#,###" /> won</span>
@@ -302,7 +304,7 @@ margin-top: 139px !important;
   					<path
 							d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
 				</svg>
-				</div>
+			</div>
 				<div class="d-flex">
 					<p style="width: 20%">배송비</p>
 					<p style="width: 80%">오픈 이벤트! 3달간 무료!</p>
@@ -340,6 +342,7 @@ margin-top: 139px !important;
                </div>
 			   </form>
             </div>
+            
          </div>
       </div>
   
@@ -397,7 +400,7 @@ margin-top: 139px !important;
       
       <form action="<c:url value='/reviewReg.do'/>" method="post" name="frm">
       <input type="hidden" name="dishnum" value="${result.dishnum }">
-      <input type="hidden" name="id" value="${name.id }"> 
+      <input type="hidden" name="id" value="${member.id }"> 
       <table class="table table-hover my-4" id="ReviewTableWrite">
              <tr>
              <td colspan="3">
@@ -586,7 +589,7 @@ $(".form")
   }
 });
 
-	/* $(".tab a").on("click", function (e) {
+/* $(".tab a").on("click", function (e) {
 		  e.preventDefault();
 		  $(this).parent().addClass("active");
 		  $(this).parent().siblings().removeClass("active");
@@ -605,7 +608,7 @@ $(".form")
 			  all.removeClass("modal");
 			  location.href="#";
 		  }
-		}); */
+		});  */
 	</script>
 </body>
 </html>

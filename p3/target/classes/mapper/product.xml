@@ -25,7 +25,7 @@
          <selectKey keyProperty="num" resultType="int" order="BEFORE">
           SELECT COUNT(*) + 1 as num FROM REVIEW
       </selectKey>
-     INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate)
+     INSERT INTO REVIEW (NUM, ID, DISHNUM, MESSAGE, STARPOINT, WRITEDATE, TASTEEVLTN, TASTESTRNG) VALUES (#{num}, #{id}, #{dishnum}, #{message}, #{starpoint}, sysdate, #{tasteevltn}, #{tastestrng})
   </insert>
   
   <select id="getReview" parameterType="pagingVO" resultType="reviewVO">
@@ -36,11 +36,26 @@
  </select>
  
   <select id="getReviewTotCnt" resultType="Integer">
-     SELECT COUNT(*) FROM REVIEW
+     SELECT COUNT(*) FROM REVIEW WHERE DISHNUM = #{dishnum}
   </select>
  
    <select id="getMenuList" resultType="productVO">
      SELECT DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5 FROM MEAL_KIT ORDER BY DISHNUM DESC
    </select>
- 
+   
+   <select id="getbestList" resultType="productVO">
+     SELECT DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5 FROM MEAL_KIT where DISHNUM = '2021_Product_00009' or DISHNUM = '2021_Product_00008' or DISHNUM = '2021_Product_00007' ORDER BY DISHNUM DESC
+   </select>
+   
+   <select id="gethan" resultType="productVO">
+     SELECT DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5 FROM MEAL_KIT WHERE FOODKIND = 0
+   </select>
+   
+   <select id="getyang" resultType="productVO">
+     SELECT DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5 FROM MEAL_KIT WHERE FOODKIND = 1
+   </select>
+   
+   <select id="getuserCart" resultType="productVO">
+     SELECT DISHNUM, DISHNAME, FOODKIND, PRICE, RECIPE, CNT, IMAGE1,IMAGE2,IMAGE3,IMAGE4,IMAGE5 FROM MEAL_KIT WHERE DISHNUM = #{dishnum}
+   </select>
 </mapper>
