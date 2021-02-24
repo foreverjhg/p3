@@ -71,7 +71,7 @@
         
         <div class="row">
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/doenjang/doenjang4-copy.jpg' /> alt="" class="img-fluid">
+              <img src=<c:url value='/resources/img/galbijjim/gal1.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>
@@ -83,7 +83,7 @@
            </div>
            
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/doenjang/doenjang5-copy.jpg' /> alt="" class="img-fluid">
+              <img src=<c:url value='/resources/img/galbijjim/gal2.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>
@@ -97,7 +97,7 @@
         
         <div class="row">
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/doenjang/doenjang6-copy.jpg' /> alt="" class="img-fluid">
+              <img src=<c:url value='/resources/img/galbijjim/gal3.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>
@@ -109,7 +109,7 @@
            </div>
            
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/doenjang/doenjang2-copy.jpg' /> alt="" class="img-fluid">
+              <img src=<c:url value='/resources/img/galbijjim/gal5.JPG' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>

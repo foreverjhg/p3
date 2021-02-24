@@ -61,7 +61,7 @@
       
         
         <div class="jumbotron text-left bg-white px-0 pb-2 mb-0">
-            <h3 class="display-6">HOMEAL과 함께하는 된장찌개 레시피</h3>
+            <h3 class="display-6">HOMEAL과 함께하는 불고기 레시피</h3>
             <div class="row">
                <div class="col-12">
                   <hr class="my-3">
@@ -71,7 +71,7 @@
         
         <div class="row">
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/bulgogi/bulgogi_re01.PNG' /> alt="" class="img-fluid">
+              <img src=<c:url value='/resources/img/bulgogi/bulgogi_re1.jpg' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>
@@ -83,13 +83,13 @@
            </div>
            
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/bulgogi/bulgogi_re02.PNG' /> alt="" class="img-fluid">
+              <img src=<c:url value='/resources/img/bulgogi/bulgogi_re2.jpg' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>
                  <div class="col-11">
                     <h5>불고기소스 넣기</h5>
-                    <p>뚝배기가 끓기 시작하면 소스팩을 넣고 계속 끓여주세요</p>
+                    <p>뚝배기가 끓기 시작하면 소스팩을 넣고 계속 끓여주세요.</p>
                  </div>
               </div>
            </div>
@@ -97,25 +97,25 @@
         
         <div class="row">
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/bulgogi/bulgogi_re03.PNG' /> alt="" class="img-fluid">
+              <img src=<c:url value='/resources/img/bulgogi/bulgogi_re3.jpg' /> alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>
                  <div class="col-11">
                     <h5>고기, 야채 끓여주기</h5>
-                    <p>고기가 반정도 익으면 나머지 야채를 넣고 끓여줍니다.</p>
+                    <p>고기가 반정도 익으면 나머지 야채를 넣고 끓여줍니다.(이때 당면을 추가해주세요.)</p>
                  </div>
               </div>
            </div>
            
            <div class = "col-6">
-              <img src=<c:url value='/resources/img/bulgogi/bulgogi1.JPG' /> alt="" class="img-fluid">
+              <img src="<c:url value='/resources/img/bulgogi/bulgogi10.JPG' />" style="object-fix: cover" alt="" class="img-fluid">
               <div class = "col-12 py-3 px-0 d-flex">
                  <div class="col-1"><a href="#"><img class="rounded-circle"
                      src="http://placehold.it/30x30" alt=""></a></div>
                  <div class="col-11">
                     <h5>Tip. 꿀팁정보!</h5>
-                    <p>집에 있는 당면을 넣어주면 더욱 맛있습니다.</p>
+                    <p>상추와 곁들여드시면 더욱 맛있습니다.</p>
                  </div>
               </div>
            </div>
