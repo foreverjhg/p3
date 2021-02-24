@@ -29,5 +29,7 @@ public interface ProductService {
 	List<ProductVO> getyang() throws Exception;
 
 	ProductVO getuserCart(ProductVO cart) throws Exception;
+	
+    ProductVO getProdInfo(ProductVO vo) throws Exception;
 
 }

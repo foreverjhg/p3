@@ -83,5 +83,10 @@ public class ProductServiceImpl implements ProductService {
 	public ProductVO getuserCart(ProductVO cart) throws Exception {
 		return dao.getuserCart(cart);
 	}
-
+  
+   @Override
+   @Transactional
+   public ProductVO getProdInfo(ProductVO vo) throws Exception {
+      return dao.getuserCart(vo);
+   }
 }

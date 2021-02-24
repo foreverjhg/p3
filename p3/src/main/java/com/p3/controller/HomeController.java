@@ -12,8 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.p3.service.ProductService;
 import com.p3.service.ProjectService;
+import com.p3.vo.ProductVO;
 
 /**
  * Handles requests for the application home page.
@@ -24,6 +27,9 @@ public class HomeController {
 	
 	@Resource(name = "projectService")
 	private ProjectService projectService;
+	
+	@Resource(name = "productService")
+	private ProductService productService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -100,5 +106,40 @@ public class HomeController {
 		
 		return "photo";
 	}
+	@RequestMapping(value = "/cart.do", method = RequestMethod.GET)
+	public String cart(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "cart";
+	}
+	
+	@RequestMapping(value = "/finish.do", method = RequestMethod.GET)
+	   public String finish(Locale locale, Model model, @RequestParam(value = "rs", required=false) String rs) throws Exception{
+	      logger.info("Welcome home! The client locale is {}.", locale);
+	      
+	      Date date = new Date();
+	      DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+	      
+	      String formattedDate = dateFormat.format(date);
+	      
+	      model.addAttribute("serverTime", formattedDate );
+	      
+	      ProductVO vo = new ProductVO();
+	      vo.setDishnum(rs);
+	      
+	      ProductVO result = productService.getProdInfo(vo);
+	      model.addAttribute("result", result );
+	      
+	      System.out.println(rs);
+
+	       return "result";
+	   }
 	
 }
